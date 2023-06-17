@@ -20,7 +20,7 @@ Bu repozitoriyada Python ilə bağlı müsahibə sual-cavabları toplanılır. S
 12. [Python namespaces nələrdir?](#python-namespaces-nələrdir)
 13. [Python-da miras alma nədir?](#python-da-miras-alma-nədir)
 14. [ Scope resolution nədir?](#scope-resolution-nədir)
-15. [Python-da sözlər (dictionary) nədir?](#python-da-sözlər-dictionary-nədir)
+15. [Python-da dictionary nədir?](#python-da-dictionary-nədir)
 16. [Python-da funksiyalar nədir?](#python-da-funksiyalar-nədir)
 17. [Python-də __init__ nədir?](#python-də-__init__-nədir)
 18. [Python-də yayğın olaraq istifadə olunan built-in data types nələrdir?](#python-də-yayğın-olaraq-istifadə-olunan-built-in-data-types-nələrdir)
@@ -213,4 +213,28 @@ class AltSinif(UstSinif):
 
 Burada `AltSinif`, `UstSinif`-dən miras alır. `AltSinif`, `UstSinif`-ın xüsusiyyətlərini və metodlarını əldə edir və onlara əlavə funksialar əlavə edə bilər.
 
+Python-da, fərqli növ miras alma formalarını var. Ən yaygın olanları aşağıdakılardır:
+
+1. Single Inheritance (Tək Miras): Bu formada, bir alt sinif yalnız bir üst sinifdən miras alır. Bu, bir hərəkət etmə sətri ilə ifadə edilir: `class AltSinif(UstSinif)`. Alt sinif, üst sinifin xüsusiyyətlərini və metodlarını ötürür.
+2. Multiple Inheritance (Çoxlu Miras): Bu formada, bir alt sinif birdən çox üst sinifdən miras ala bilər. Bu, bir hərəkət etmə sətri ilə ifadə olunur: `class AltSinif(UstSinif1, UstSinif2)`. Alt sinif, bütün üst siniflərin xüsusiyyətlərini və metodlarını ötürür.
+3. Multilevel Inheritance (Çoxlu Səviyyəli Miras): Bu formada, bir alt sinif bir başqa alt sinifdən miras alır. Bu, hərəkət etmə sətrindən asılı olaraq birdən çox səviyyədə ifadə oluna bilər: `class AltSinif1(UstSinif)` və `class AltSinif2(AltSinif1)`. Alt sinif, üst sinifin və ya üst-alt sinifin xüsusiyyətlərini və metodlarını ötürür.
+4. Hierarchical Inheritance (İerarxiyalı Miras): Bu formada, birdən çox alt sinif eyni üst sinifdən miras alır. Bu, bir hərəkət etmə sətri ilə ifadə olunur: `class AltSinif1(UstSinif)` və `class AltSinif2(UstSinif)`. Alt siniflər, üst sinifin xüsusiyyətlərini və metodlarını ötürür.
+5. Hybrid Inheritance (Hibrid Miras): Bu formada, bir alt sinif hem tək miras, hem də çoxlu miras formalarını istifadə edir. Bu, bir hərəkət etmə sətri ilə ifadə olunur: `class AltSinif(UstSinif1, UstSinif2, UstSinif3)`. Alt sinif, birdən çox üst sinifdən xüsusiyyətlər və metodlar ötürür.
+
 Miras alma, kodun yeniden istifadəsini və təşkilatını təmin edir. Üst siniflərdən miras alan alt siniflər, üst sinifdə mövcud olan funksianı təkrar yazmağa ehtiyac duymadan onu istifadə edə bilir. Bu, kodun daha oxunaqlı, düzgün və genişlənən bir struktura malik olmasını təmin edir. Həmçinin, miras alma, obyek yönümlü proqramlaşdırma paradigmalarında polimorfizm və yüklənmiş metodların tətbiqini dəstəkləyir.
+
+# Scope resolution nədir?
+Python-da scope resolution (sahe həlli), bir adın hansı ad sahəsinə aid olduğunu tapmaq üçün istifadə olunan prosesdir. Python-da ad sahələri, adların mövcudluğunu və görünürlüyünü tənzimləyir. Onlar ad konfliktlərini önləyir və adlara düzgün bir şəkildə çatmağa imkan verir.
+- Global Ad Sahəsi: Global ad sahəsi, bir Python skriptinin daxilində, yəni bütün modulda əldə edilən adlara görünürlük təmin edir. Global adlar, skriptin istifadə etdiyi modullardan daxil olunan funksiyalar və siniflər arasında görünə bilər. Həmçinin, global adlar, bir moduldan başqa bir modula import edilən adlar kimi də əldə edilə bilər.
+- Local Ad Sahəsi: Yerli ad sahəsi, bir funksiyanın daxilində tanımlanan adlara görünürlük təmin edir. Yerli adlar, yalnız funksiya tərəfindən əldə edilə bilər və digər funksiyalar tərəfindən gizli qalır. Yerli ad sahəsi, hər bir funksiya tətbiqində müstəqil olaraq yaradılır və funksiyanın icrası zamanı aktivdir.
+- Enclosing Ad Sahəsi: Enclosing ad sahəsi, bir iç funksiyanın daxilində tanımlanan adlara görünürlük təmin edir. Bu ad sahəsi, iç funksiyaların daxilində yerləşən funksiya tərəfindən təyin olunur. İç funksiya, əvvəlki funksiyanın daxilindəki adlara çatmağa imkan verir və bu sayədə hər bir iç funksiya öz "qabaqcadan" yerli ad sahəsini əldə edir.
+
+# Python-da dictionary nədir?
+Pyton-da dictionary verilən tipi həqiqi həyatdakı lüğət mənası ilə çox oxşarlıq təşkil edir. Məsələn 'alma' sözünün ingilis dili lüğətindəki qarşılığı 'apple' kəliməsidir. Dolayısı ilə 'alma' sözü ilə 'apple' sözü arasındakı əlaqəni bu şəkildə ifadə edə bilərik: 'alma':'apple'
+Bu bizə 'alma' sözünün qarşılığının 'apple' olduğunu açıq şəkildə göstərir. Python-dakı dictionary verilən tipi ilə bu durumu yazacaq olsaydıq aşağıdakı bənzər şəkildə göstərəcəkdik:
+
+```python
+my_dict = {'alma':'apple'}
+```
+Dictionary `key-value` (anahtar-qiymət) cütlüyü ilə təmsil olunur. Burada 'alma' `key` (anahtar) və 'apple' isə `value` (qiymət) kimi təmsil olunur. Dictionary, düzgün sıra indeksi ilə deyil, key vasitəsilə məlumatlara çatmağa imkan verir. Hər bir `key`, müəyyən bir qiymətə əsasən bənzərsiz və tək olmalıdır. Sözlər dəyişdirilə bilən və müxtəlif verilənləri saxlamaq üçün əlverişlidir.
+
