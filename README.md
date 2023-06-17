@@ -572,3 +572,78 @@ print(next(gen))  # Output: 3
 Bu nümunədə, `my_generator` adlı bir generator funksiyası yaradılır. İlk `yield` ifadəsi ilə funksiya 1 dəyərini qaytarır və dayanır. Sonra növbəti "next()" çağırışında funksiya, sonrakı `yield` ifadəsinə kimi davam edir və dəyərləri ardıcıllıq üzrə qaytarır.
 
 `yield` ifadəsi, generatorlar vasitəsilə böyük verilənlərlə çalışmağa imkan verir və yaddaşda saxlama məsələlərini minimallaşdırır. Generatorlar, döngülər, iterasiya verilənləri və lazımi məlumatı progressiv olaraq tələb etmək üçün çox faydalı bir alətdir.
+
+# Python dilində dəyişənləri müvafiq veri tipləri ilə təyin etmək məcburiyyəti varmı?
+Python dilində dəyişənləri müvafiq veri tipləri ilə təyin etmək məcburiyyəti yoxdur. Python dilində dəyişənlərə dəyər təyin etmək üçün sadəcə dəyişənin adını və dəyəri təyin etmək kifayətdir. Python dəyişənlərinin veri tipləri dinamik olaraq təyin edilir, yəni dəyişənin dəyəri təyin edildikdən sonra veri tipi avtomatik olaraq müəyyən edilir.
+
+# Dict və List comprehensions nə deməkdir?
+List və dict comprehensions, Python dilində bir list və ya dict yaratmaq üçün istifadə olunan sintaksis qaydalarıdır. List və dict comprehensions, bir list və ya dict yaratmaq üçün daha sərfəli və qısa bir variant kimi istifadə olunur. List comprehension, bir siyahı yaratmaq üçün ifadələri ifadə edir. Bu metod, bir iterasiya üzərində dövr etmək, şərt ifadələrini yoxlamaq və yeni bir siyahı yaratmaq üçün kompakt bir sintaksis təklif edir. 
+Nümunə olaraq, 1-dən 10-a qədər ədəd siyahısının kvadratlarını əldə etmək üçün bir list comprehension istifadə edə bilərik:
+```python
+squares = [x**2 for x in range(1, 11)]
+```
+Dict comprehension isə sözlər (dictionary) yaratmaq üçün ifadələri ifadə edir. Bu metod, iterasiya üzərində dövr etmək, şərt ifadələrini yoxlamaq və yeni bir sözlər yaratmaq üçün kompakt bir sintaksis təklif edir. Nümunə olaraq, bir sözlək yaratmaq üçün bir dict comprehension istifadə edə bilərik:
+```python
+names = ['Alice', 'Bob', 'Charlie']         
+name_lengths = {name: len(name) for name in names}
+print(name_lengths)  # Output: {'Alice': 5, 'Bob': 3, 'Charlie': 7}
+```
+List comprehension və dict comprehension, kodun səmərəli, oxunaqlı və qısa formada yazılmasına imkan verir və iterasiya və şərt ifadələrinin birgə istifadəsi ilə daha effektiv və təmiz kod yazmağa kömək edir.
+
+# Python-da çoxlu miras dəstəklənir?
+Python dilində çoxlu miras dəstəklənir. Çoxlu miras, bir sinifin birdən çox üst sinifdən miras alması deməkdir. Python dilində bir sinif birdən çox üst sinifdən miras ala bilər. Bu, bir sinifin birdən çox üst sinifdən xüsusiyyətlərini və metodlarını əldə etməsinə imkan verir. Çoxlu miras, siniflərin bir-birinə bağlılığını və bir-birinə bağlılığın təhlükəsizliyini artırır.
+
+# Range və xrange arasında fərq nədir?
+- Python3 xrange funksiyası yoxdur, sadəcə range funksiyası mövcuddur.
+- Python2 xrange funksiyası bir siyahı yaratmır, sadəcə bir iterator obyekti yaradır. Bu, yaddaşda çox az yer tutur və daha effektivdir. range funksiyası isə bir siyahı yaradır.
+- range daha çox yaddaş sərf edir, çünki bir siyahı yaradır. xrange isə daha az yaddaş sərf edir, çünki yalnız bir iterator obyekti yaradır.
+
+# "Pickling və unpickling" nə deməkdir?
+Pickling, Python obyektlərini bir fayla yazmaq üçün istifadə olunan bir prosesdir. Pickling, bir obyektin hər hansı bir fayla yazılması deməkdir. Fayl daha sonra oxunaraq obyektin bərpa edilməsi prosesi unpickling adlanır. Pickling və unpickling, Python obyektlərini fayllarda saxlamaq üçün istifadə olunan bir prosesdir.
+Nümunə olaraq, aşağıdakı kodda bir obyektin seriləşdirilməsi (pickling) göstərilir:
+```python
+import pickle
+
+data = {'name': 'John', 'age': 30, 'city': 'New York'}
+
+# Pickling the object
+serialized_data = pickle.dumps(data)
+```
+Aşağıdakı nümunədə seriləşdirilmiş obyektin (pickled object) yenidən orijinal obyektə (unpickled object) çevrilməsi göstərilir:
+```python
+import pickle
+
+# Unpickling the object
+deserialized_data = pickle.loads(serialized_data)
+
+# Accessing the original object
+print(deserialized_data['name'])  # Output: John
+print(deserialized_data['age'])  # Output: 30
+print(deserialized_data['city'])  # Output: New York
+```
+
+# Tkiner nədir?
+Tkinter, Python dilində standart bir GUI (Graphical User Interface) paketidir. Tkinter GUI proqramları yaratmaq üçün istifadə edilən daxili Python moduludur və GUI inkişafı üçün Python-un standart alət dəstidir. Tkinter Python ilə əvvəlcədən yüklənmişdir, buna görə ayrıca quraşdırma tələb olunmur. Onu skriptinizə idxal etməklə istifadə etməyə başlaya bilərsiniz.
+
+# Python tam obyekt yönümlüdürmü?
+Python tam obyekt yönümlü bir proqramlaşdırma dilidir. Bu deməkdir ki, Python-da hər şey obyektdir və hər obyektin öz xüsusiyyətləri (atributlar) və davranışları (metodlar) var. Python-da obyekt yaratmaq üçün `class` açar sözündən istifadə edirik. `class`, obyektin şablonu və ya qaydasıdır. Məsələn: 
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        print(f"Hello, my name is {self.name} and I am {self.age} years old.")
+```
+Bu `class` bir şəxs obyektini təsvir edir. `__init__()` metodu obyektin yaradılması zamanı çağırılan xüsusi bir metoddur. self parametri isə obyektin özünü göstərir. `greet()` metodu isə obyektin bir davranışını təmsil edir. Bu `class`-dan istifadə edərək müxtəlif şəxs obyektləri yarada bilərik:
+```python
+p1 = Person("Ali", 25)
+p2 = Person("Zara", 23)
+
+p1.greet() # Hello, my name is Ali and I am 25 years old.
+p2.greet() # Hello, my name is Zara and I am 23 years old.
+```
+
+# Python-da bütün file prosesləri üçün istifadə olunan modullar nələrdir?
+Python-da bütün file prosesləri üçün istifadə olunan modullar `os` və `os.path` modullarıdır. `os` modulu, fayllar və qovluqlar üzərində əməliyyatlar aparmaq üçün istifadə olunur. `os.path` modulu isə fayl və qovluqların yolları ilə işləmək üçün istifadə olunur.
