@@ -476,3 +476,18 @@ Mənfi indekslərin istifadəsi bir neçə məqsədə xidmət edir:
 3. `subn(pattern, repl, string, count=0)` metod: Bu metod, `sub()` metoduna oxşar işləyir, lakin əvəzləmələrin sayını və əvəzlənmiş mətnlərin bir siyahısını qaytarır. Qaytarılan tuple-in birinci elementi əvəzləmələrin nəticəsində əldə edilən yeni mətndir, ikinci elementi isə əvəzləmə sayını təmsil edir.
 
 Bu metodlar, "re" modulunun güclü funksiyaları olaraq mətnlərin manipulyasiyası üçün çox istifadə edilir. `regex` qaydalarını təyin edərək mətndəki məlumatları axtarmaq, bölüşdürmək və ya əvəzləmək üçün bu metodları istifadə edə bilərsiniz.
+
+# Python literalı nə deməkdir?
+Python dilində, literal bir veri tipinin doğrudan mənimsənilən qiymətidir. Başqa bir deyişlə, bir literal, bir verilənin özünün özəlliklərini və qiymətini əks etdirən sintaktik olaraq dəyəri ifadə edir.
+
+Python-da fərqli növ literal tipləri mövcuddur:
+
+1. String literalı: Mətni təmsil edir və tıravərək (`'`) və ya ikiqat (`"`) işarələrlə yazılır. Məsələn, `'Hello'` və ya `"Python"` bir string literalıdır.
+2. Numeric literalı: Sayıları təmsil edir. Məsələn, `42`, `3.14`, `5+3j` rəqəmlərini təmsil edən numeric literal tipləridir.
+3. Boolean literalı: İstər doğru (`True`) istərsə də yanlış (`False`) qiymətləri təmsil edən literal tipləridir.
+4. List literalı: Siyahıları təmsil edir və siyahını köşəli mötərizələr (`[]`) içərisində elementləri ayıraraq təyin edir. Məsələn, `[1, 2, 3]` bir list literalıdır.
+5. Tuple literalı: Tuple'ları təmsil edir və elementləri mötərizələr (`()`) içərisində ayıraraq təyin edir. Məsələn, `(1, 2, 3)` bir tuple literalıdır.
+6. Dictionary literalı: Sözləri (dictionary) təmsil edir və elementləri süslü mötərizələr (`{}`) içərisində `anahtar: dəyər` formatında təyin edir. Məsələn, `{'ad': 'John', 'yaş': 25}` bir dictionary literalıdır.
+7. Set literalı: Setləri təmsil edir və elementləri süslü mötərizələr (`{}`) içərisində ayıraraq təyin edir. Məsələn, `{1, 2, 3}` bir set literalıdır.
+
+Bu literal tipləri, Python dilində verilənlərə mənimsənmək üçün istifadə olunan təyinatlar və sintaksis qaydalarını ifadə edir.
