@@ -453,3 +453,17 @@ Python-da çox sətirli şəkildə şərh yazmaq üçün `"""` və ya `'''` işa
 ```
 
 # Python dili nə cür bir dil sayılır - proqramlaşdırma dili və ya skript dilidir?
+Python dili həm proqramlaşdırma dili, həm də skript dilidir. Python dili proqramlaşdırma dili olaraq adlandırılır, çünki onunla proqramlar yazmaq mümkündür. Python dili həm də skript dilidir, çünki onunla skriptlər də yazmaq mümkündür. 
+
+# Mənfi indekslər nədir və nə üçün istifadə olunurlar?
+Mənfi indekslər Python-da bir sıra, siyahı və ya digər verilənlər strukturlarında elementləri geriye doğru saymaq üçün istifadə olunan indekslərdir. Normal indekslər 0-dan başlayır və artıq istifadə olunur, amma mənfi indekslər -1-dən başlayır və geriye doğru azalır.
+
+Mənfi indekslərin istifadəsi bir neçə məqsədə xidmət edir:
+
+1. Son elementə çatmaq: Mənfi indekslər, bir sıra və ya siyahının son elementinə asanlıqla çatmağa imkan verir. Məsələn, -1 indeksi sonuncu elementi göstərir, -2 indeksi sonuncudan bir öncəki elementi göstərir və s. kimi.
+2. Geriye doğru dövriyyələr: Mənfi indekslər dövriyyələr zamanı geriye doğru elementləri gətirmək üçün istifadə olunur. Bir sıra və ya siyahıdakı elementləri geriye doğru sıra ilə işləmək üçün mənfi indekslər istifadə edilə bilər.
+3. Arxa hissələrə müraciət: Mənfi indekslər bir sıranın və ya siyahının arxa hissələrindəki elementlərə müraciət etməyə imkan verir. Məsələn, -1 indeksi son elementi, -2 indeksi sonuncudan bir öncəki elementi göstərir.
+
+Ən əsas faydası, mənfi indekslərin verilənlər strukturlarının son elementlərinə asanlıqla çatmağa imkan verərək, tərs istiqamətdə indekslənməni idarə edə bilməsi və dövriyyələr üçün rahatlıq yaratmasıdır.
+
+# Python-dakı "re" modulunun split(), sub() və subn() metodlarını açıqlayın.
