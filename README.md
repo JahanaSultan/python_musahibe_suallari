@@ -467,3 +467,12 @@ Mənfi indekslərin istifadəsi bir neçə məqsədə xidmət edir:
 Ən əsas faydası, mənfi indekslərin verilənlər strukturlarının son elementlərinə asanlıqla çatmağa imkan verərək, tərs istiqamətdə indekslənməni idarə edə bilməsi və dövriyyələr üçün rahatlıq yaratmasıdır.
 
 # Python-dakı "re" modulunun split(), sub() və subn() metodlarını açıqlayın.
+"re" modulu, Python-dakı regular ifadələr (`regex`) ilə işləmək üçün istifadə olunan bir moduldur. Bu modul, mətnlərin axtarışını, əvəzləməsini və başqa əməliyyatları icra etmək üçün funksiyalar və metodlar təklif edir. İstifadəçilərə geniş imkanlar verir və mətn işləmə prosesini daha effektiv edir.
+
+"re" modulunun ən yaygın istifadə olunan üç metodu `split()`, `sub()` və `subn()`-dir:
+
+1. `split(pattern, string, maxsplit=0)` metod: Bu metod, verilən mətni (string) müəyyən bir qayda (pattern) əsasında bölmək üçün istifadə olunur. Məsələn, mətni boşluqlara görə bölərək bir siyahı yaradır. `pattern` parametri, regex tərəfindən tanınan qaydadır. `string` parametri bölmək istədiyimiz mətndir. `maxsplit` parametri isə opsiyonaldır və ən çox sayda bölməni sayğac edir.
+2. `sub(pattern, repl, string, count=0)` metod: Bu metod, verilən mətndə müəyyən bir qaydanı (pattern) axtarır və onu başqa bir mətnlə (repl) əvəzləyir. `pattern` parametri, regex tərəfindən tanınan qaydadır. `repl` parametri, əvəzlənəcək mətndir. `string` parametri, əvəzləmənin aparılacağı mətndir. `count` parametri isə opsiyonaldır və maksimum əvəzləmə sayını təyin edir.
+3. `subn(pattern, repl, string, count=0)` metod: Bu metod, `sub()` metoduna oxşar işləyir, lakin əvəzləmələrin sayını və əvəzlənmiş mətnlərin bir siyahısını qaytarır. Qaytarılan tuple-in birinci elementi əvəzləmələrin nəticəsində əldə edilən yeni mətndir, ikinci elementi isə əvəzləmə sayını təmsil edir.
+
+Bu metodlar, "re" modulunun güclü funksiyaları olaraq mətnlərin manipulyasiyası üçün çox istifadə edilir. `regex` qaydalarını təyin edərək mətndəki məlumatları axtarmaq, bölüşdürmək və ya əvəzləmək üçün bu metodları istifadə edə bilərsiniz.
