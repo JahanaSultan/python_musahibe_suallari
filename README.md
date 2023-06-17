@@ -491,3 +491,64 @@ Python-da fərqli növ literal tipləri mövcuddur:
 7. Set literalı: Setləri təmsil edir və elementləri süslü mötərizələr (`{}`) içərisində ayıraraq təyin edir. Məsələn, `{1, 2, 3}` bir set literalıdır.
 
 Bu literal tipləri, Python dilində verilənlərə mənimsənmək üçün istifadə olunan təyinatlar və sintaksis qaydalarını ifadə edir.
+
+# Python-da map funksiyası nədir?
+Python'da `map()` funksiyası, bir dəyişəni tətbiq edərək bir iterasiya verilənin üzərində keçmək üçün istifadə olunan bir built-in funksiyadır. `map()` funksiyası, birinci argument kimi bir funksiya və ya lambda ifadəsi və ikinci argument kimi bir iterable verilən qəbul edir. Funksiya, verilənin hər elementinə tətbiq edilir və nəticə olaraq yeni bir iterator obyekti qaytarılır.
+
+`map()` funksiyasının sintaksisi aşağıdakı kimi görünür:
+
+```python
+map(function, iterable)
+```
+
+Burada `function`, tətbiq ediləcək funksiya və ya lambda ifadəsidir. `iterable` isə dəyişən, siyahı, tuple və ya digər iterasiya verilənidir.
+
+`map()` funksiyasının əsas məqsədi, bir iterasiya veriləni üzərində tətbiq edilən əməliyyatı hamı üçün tətbiq etməkdir. Nəticə olaraq, tətbiq edilən funksiyanın çıxarımları yeni bir iterator obyekti kimi qaytarılır. Bu iterator obyekti daha sonra list, tuple və ya başqa bir iterable verilən tiplərinə çevrilə bilər.
+
+Aşağıdakı örnəkdə `map()` funksiyasının istifadəsi göstərilmişdir:
+
+```python
+def square(x):
+    return x ** 2
+
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = map(square, numbers)
+
+print(list(squared_numbers))  # Output: [1, 4, 9, 16, 25]
+```
+
+Bu misalda `numbers` siyahısı üzərində `square()` funksiyası tətbiq olunur və hər bir elementin kvadratı yeni bir iterator obyektinə yazılır. `list()` funksiyası ilə iterator obyekti siyahıya çevrilir və nəticə konsolda çap olunur. Əksər hallarda, `map()` funksiyası, loop ilə hər bir elementin üzərində getmək yerinə daha sərfəli bir variant kimi istifadə olunur.
+
+# Python-dakı generatorlar (generators) nələrdir?
+Python-da generatorlar təkrarlana bilən obyektlər yaratmaq üçün istifadə edilə bilən xüsusi funksiyalardır. Dəyəri qaytaran və sonra fəaliyyətini dayandıran adi funksiyalardan fərqli olaraq, generatorlar icranı müvəqqəti olaraq dayandırmaq və hər dəfə bir dəyər vermək üçün `yield` açar sözündən istifadə edirlər. Bu, generatorların yaddaşını səmərəli edir, çünki onlar bütün dəyərlər ardıcıllığını əvvəlcədən yaratmır, əksinə, tələb olunan dəyərlər yaradır.
+
+Generatorlar böyük verilənlər dəstləri ilə işləyərkən və ya dəyərlərin tam ardıcıllığına bir anda ehtiyac olmadıqda faydalıdır. Onlar bizə həddindən artıq yaddaş sərf etmədən potensial sonsuz ardıcıllıqla təkrarlamağa imkan verir.
+
+# Python-dakı iterasiya nədir?
+Python'da iterasiya, bir objektin elementlərinin ardıcıllıq üzrə dəyərləri ilə getmək deməkdir. Iterasiya, iterasiya verilənlərinin (iterables) üzərində dövr etmək üçün istifadə olunan bir prosesdir. Iterasiya verilənləri, daxili dəyərlərə sahib olan və bir iterasiya obyektinə çevrilə bilən verilənlərdir.
+
+Python'da bir çox dəyər tipi, iterasiya veriləni kimi istifadə edilə bilir. Bunlar arasında siyahılar (lists), demək olar ki, hər hansı bir tipdəki daxili dəyərlərə malik olan tuple-lar, hər hansı bir tipdəki elementləri saxlaya bilən set-lər, dictionari-lər və string-lər daxildir.
+
+Iterasiya verilənləri ilə işləmək üçün `for` dövr operatorundan və ya `iter()` funksiyasından istifadə edilir. `for` dövr operatoru, bir iterasiya verilənindəki hər bir elementin üzərində keçmək üçün istifadə olunur:
+```python
+my_list = [1, 2, 3, 4, 5]
+for element in my_list:
+    print(element)
+```
+Bu kod nümunəsində `my_list` siyahısı üzərində dövrə girilir və hər bir element `element` adlı dəyişənə mənimsədilir. Sonra hər bir element konsola çap olunur.
+
+`iter()` funksiyası isə bir iterasiya veriləni obyektini yaratmaq üçün istifadə olunur. Bu funksiya, verilən obyektini tək bir elementin ardıcıllıq üzrə dəyərlərini təmsil edən bir iterator obyektinə çevirir. Bu iterator obyekti daha sonra `next()` funksiyası ilə istifadə edilərək elementlərə ardıcıllıq üzrə daxil olunur:
+
+```python
+my_list = [1, 2, 3, 4, 5]
+my_iter = iter(my_list)
+
+print(next(my_iter))  # Output: 1
+print(next(my_iter))  # Output: 2
+print(next(my_iter))  # Output: 3
+```
+
+Bu misalda `iter()` funksiyası ilə `my_list` siyahısının bir iterator obyektinə çevrildiyi görünür. Daha sonra `next()` funksiyası ilə iterator obyektinə ardıcıllıq üzrə daxil olunur və hər bir `next()` çağırışı ilə bir sonrakı element alınır.
+
+Iterasiya, bir verilən üzərində elementlər üzrə dövr etmək, məlumatları lazımi zamanda lazımi məqsədlər üçün istifadə etmək və həmçinin Python-da bir çox proqramlama paradigması üçün əsas bir vaciblik kəsb edir.
+
