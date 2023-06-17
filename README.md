@@ -124,6 +124,27 @@ Python proqramlaşdırma dili Guido van Rossum tərəfindən yaradılmışdır v
 # Pythonun versiyaları 
 Python 2 və Python 3 olmaqla iki əsas versiyası var. Python 2-nin ən son versiyası 2.7 idi. Python 2-nin ən son versiyası 2020-ci ildən sonra dəstəklənmir. Python 3.0 3 dekabr 2008-ci ildə buraxıldı. O, əvvəlki versiyada müəyyən qüsurları düzəltmək üçün nəzərdə tutulmuşdu. 
 
+# Pythonun faydaları
+- Sadə syntax: Python, sadə sintaksisə sahibdir. Bu, kodun oxunmasını və anlaşılmasını daha asanlaşdırır. Yeni başlayanlar üçün idealdır və kodun daha sürətli yazılmasını təmin edir.
+- Geniş kitabxana dəstəyi: Python, zəngin bir standart kitabxana təklif edir. Bu kitabxana, fərdi funksiyaların və göndərilənlərin yenidən icrasına ehtiyac qalmadan çeşitli təhlükəsizlik, data analitikası, web development və s. üçün hazır modullar təmin edir.
+- Çox yaxşı bir cəmiyyət: Python geniş bir cəmiyyət tərəfindən dəstəklənir. İnternetdə çox sayda mənbə, tutorial, forum və topluluq mövcuddur. Bu, istifadəçilərin problemlərini həll etmək üçün dəstək və məsləhətlər əldə etmələrini asanlaşdırır.
+- Platforma-müstəqil: Python, Windows, macOS və Linux kimi əsas əməliyyat sistemləri üzərində işləyir. Bu, kodunuzun platformaya bağlı olmadan istifadə olunmasına imkan verir.
+- Çox tərəfli: Python, çox tərəfli bir dildir. Web development, data analitikası, süni intellekt, avtomatlaşdırma və daha bir çox sahədə istifadə edilir. Bu, Python istifadə edən iş imkanlarının və karyera perspektivlərinin çeşidini artırır.
+- İnteraktivlik: Python interaktiv bir dil olaraq tanınır. İnteraktiv bir shell vasitəsilə kodunuzun addımlarını dərhal nəticələri görmək üçün sətir sətir icra edə bilərsiniz. Bu, həm yeni başlayanlar, həm də proqramçılar üçün səhv tapma və kodun davranışını anlamaq üçün faydalıdır.
+
+Bu, yalnız Pythonun faydalarından bəziləridir. Pythonun sadə bir dil olması, geniş kitabxana dəstəyi və məşhur cəmiyyəti, onu bir çox proqramçılar üçün seçilən dil halına gətirir.
+
+# Pythonun dezavantajları
+Python çox üstünlüklərə malik olsa da, bir neçə dezavantaja da sahibdir. Python'un bəzi mənfi xüsusiyyətləri:
+
+- Çox Sürətli Deyil: Python, C və Java kimi daha effektiv dillərlə müqayisədə çox daha yavaş işləyir.
+- Yaddaş İstifadəsi Çoxalır: Python yaddaşı azaltmaq üçün optimize edilməmişdir. Daha qənaətli bir dil ilə yazılmış proqramla müqayisədə Python on dəfə çox RAM istifadə edə bilər.
+- İş vaxtı xətalarının qarşısını almaq daha çətindir: Python runtime'a qədər tərcümə edilmir və dinamik tipdədir. Bu səbəbdən, tərcüməçi tərəfindən müdafiə edilən bir çox problem proqram işə salınana qədər görünmür.
+- Mobil və Masaüstü Tətbiqlərdə Az Tərəfdaşlıq: Yavaşlığı və çox yaddaş istifadəsi səbəbindən Python mobil sahədə qazanclar əldə etməmişdir. Mobil tətbiqlər üçün bəzi Python inkişaf alətləri mövcuddur, lakin digər dillər üçün olan framework-lardan daha məhdudiyyətlidir. 
+- Verilənlər bazasına giriş üçün optimallaşdırılmayıb: Python, bəzi digər dillərdən fərqli olaraq, verilənlər bazaları ilə işləmək üçün güclü, yüksək keyfiyyətli və istifadəsi asan bir interfeysə malik deyildir. 
+- Multithreading Dəstəyi yoxdur: Arxitekturasına görə Python çox iş parçacığını dəstəkləmir.
+
+
 
 
 
