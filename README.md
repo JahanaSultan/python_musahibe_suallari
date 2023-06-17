@@ -31,7 +31,7 @@ Bu repozitoriyada Python ilə bağlı müsahibə sual-cavabları toplanılır. S
 23. [Python case sensitive-dir?](#python-case-sensitive-dir)
 24. [[::-1] nə iş görür?](#-1-nə-iş-görür)
 25. [Python paketləri (packages) nələrdir?](#python-paketləri-packages-nələrdir)
-26. [Python-də dəkoratorlar (decorators) nələrdir?](#python-də-dəkoratorlar-decorators-nələrdir)
+26. [Python-da dekoratorlar (decorators) nələrdir?](#python-də-dekoratorlar-decorators-nələrdir)
 27. [Python-da sıralama məcburidir (indentation required)?](#python-da-sıralama-məcburidir-indentation-required)
 28. ["break", "continue" və "pass" ifadələri necə işləyir?](#break-continue-və-pass-ifadələri-necə-işləyir)
 29. [Python-da bir siyahının elementlərini yerində təsadüfi şəkildə necə qarışdıra bilərəm?](#python-da-bir-siyahının-elementlərini-yerində-təsadüfi-şəkildə-necə-qarışdıra-bilərəm)
@@ -274,12 +274,12 @@ Python-da tip çevirməsi üçün aşağıdakı funksiyalar və metodlar istifad
 5. `tuple()`: Tuple tipinə çevirmək üçün istifadə olunur. Məsələn: `point = tuple([3, 5])`.
 6. `dict()`: Dictionary tipinə çevirmək üçün istifadə olunur. Məsələn: `person = dict(name="John", age=30)`.
 7. `set()`: Set tipinə çevirmək üçün istifadə olunur. Məsələn: `fruits = set(["apple", "banana", "orange"])`.
-8. `ord()`: Bu funksiya Unicode simvolunu təmsil edən tam ədədi qaytarır.
-9. `hex()`: Bu funksiya tam ədədi onaltılıq ədədə çevirir.
-10. `oct()`: Bu funksiya tam ədədləri səkkizlik sətirlərə çevirir.
-11. `bin()`: Bu funksiya tam ədədləri ikili ədədə çevirir.
-12. `chr()`: Bu funksiya tam ədədi Unicode simvoluna çevirir.
-13. `bool()`: Bu funksiya dəyişəni boolean tipinə çevirir.
+8. `ord()`: Bu funksiya Unicode simvolunu təmsil edən tam ədədi qaytarır. `ord('a')`.
+9. `hex()`: Bu funksiya tam ədədi onaltılıq ədədə çevirir. `hex(255)`.
+10. `oct()`: Bu funksiya tam ədədləri səkkizlik sətirlərə çevirir. `oct(8)`.
+11. `bin()`: Bu funksiya tam ədədləri ikili ədədə çevirir. `bin(2)`.
+12. `chr()`: Bu funksiya tam ədədi Unicode simvoluna çevirir. `chr(97)`.
+13. `bool()`: Bu funksiya dəyişəni boolean tipinə çevirir. `bool(0)`.
 
 Bu funksiyalar və metodlar ilə Python-da fərqli verilən tiplər arasında asanlıqla tip çevirmələri həyata keçirilə bilir. Ancaq tip çevirməsini edərkən verilən tiplər arasında uyğunsuzluq mövcud ola bilər və bu, səhvə səbəb olacaqsa, bu prosesi nəzarət altında saxlamağınız tövsiyə olunur.
 
@@ -316,3 +316,55 @@ Pythonu çağırmaq üçün aşağıdakı addımları izləyin:
 4. Python interpreterini bağlamaq üçün `exit()` funksiyasını daxil edin və "Enter" düyməsini basın.
 
 Artıq Pythonun quraşdırılması və sistem yolu dəyişdirilməsi tamamlandı. Pythonu istədiyiniz konsolda çağıraraq kodları icra edə, skriptləri işlədə və Python ilə çalışa bilərsiniz.
+
+# Python'da array-lər və list-lər arasındakı fərq nədir?
+Python'da array-lər və list-lər arasındakı fərq əsasən onların yaddaş istifadəsi və elementlərinin tipi ilə bağlıdır. List-lər çox elastikdir və müxtəlif tipdə elementləri saxlaya bilərlər. Array-lər isə yalnız eyni tipdə elementləri saxlaya bilirlər və daha az yaddaş istifadə edirlər. List-ləri yaratmaq üçün sadəcə elementləri kvadrat mötərizələr içində yazmaq kifayətdir. Array-ləri yaratmaq üçün isə array modulundan (array.array ()) və ya NumPy paketindən (numpy.array ()) xüsusi funksiyalardan istifadə etmək lazımdır. List-lər daha çox istifadə olunur, çünki Python'da daxili olaraq mövcuddurlar. Array-lər isə böyük miqdarda eyni tipdə məlumat saxlamaq üçün daha effektivdir.
+
+# Python case sensitive-dir?
+Bəli, Python case sensitive-dir. Bu o deməkdir ki, kiçik və böyük hərfləri fərqli kimi qəbul edir. Məsələn, username və UserName eyni dəyişkən deyil və onları bir-birinin əvəzinə istifadə etmək səhv olar¹. Eyni qayda funksiya adları üçün də keçərlidir. Python'da case sensitive olmaq identifikatorların sayını artırır. Python'da case sensitive olan başqa bir nümunə isə açar sözlərdir. Açar sözlər Python'da xüsusi mənaya malik olan sözlərdir və onların istifadəsi məhdudlaşdırılıb. Açar sözləri dəyişkən və ya funksiya adı kimi istifadə etmək olmaz. Açar sözlərin hamısı kiçik hərflərlə yazılır (məs., if, for, while, and, or v.s.).
+
+# [::-1] nə iş görür?
+Python'da [::-1] bir sıra (sequence) üzərində tərsinmə əməliyyatıdır. Bu sıra bir simvol sırası (string), bir siyahı (list) və ya başqa bir sıra tipi ola bilər. Bu yazılışın mənası \"sondan başlayaraq, əvvələ doğru, hər addımda bir element geri say\"dır. Bu yazılışın üç hissəsi var: start, stop və step. Məsələn:
+
+```python
+'salam'[::-1]
+# output: 'malas'
+[1, 2, 3, 4][::-1]
+# output: [4, 3, 2, 1]
+```
+
+# Python paketləri (packages) nələrdir?
+Python paketləri (packages) Python modullarının (modules) bir araya gətirilmiş və təşkilatlandırılmış qruplarıdır. Python modulu isə Python kodunu saxlayan bir fayldır. Python paketləri ilə müxtəlif funksiyaları və xüsusiyyətləri əlavə etmək və istifadə etmək mümkündür. Python paketlərini PyPI (Python Package Index) saytından yükləyib quraşdıra bilərsiniz. PyPI Python cəmiyyəti tərəfindən yaradılmış və paylaşılmış proqramlar üçün bir anbardır. PyPI-də 461,500-dan çox paket mövcuddur.
+
+# Python-da dekoratorlar (decorators) nələrdir?
+Python-da dekoratorlar (decorators) funksiyaların davranışını və ya nəticəsini dəyişdirmək üçün istifadə olunan funksiyalardır. Bir funksiyanın ətrafında başqa bir funksiyanın əlavə funksional və ya davranış tənzimləməsi təmin etmək üçün istifadə edilə bilərlər. Dekoratorlar funksiyaları düzəltməyə ehtiyac qalmadan funksiya funksionalını dəyişdirir və ya genişləndirir.
+
+Dekoratorlar aşağıdakı qaydada işləyir:
+
+1. Dekorator funksiyası təyin edilir. Bu, əsas funksiyanın davranışını dəyişdirmək üçün istifadə ediləcək olan funksiya olur.
+2. Əsas funksiya dekoratorun parametri kimi təyin edilir. Bu, əsas funksiyaya əlavə funksionallıq əlavə etmək üçün dekoratorun əsas funksiyaya müdaxilə edə bilmək imkanı verir.
+3. Əsas funksiyaya dekorator tətbiq olunur. Bu, əsas funksiyanın davranışını dəyişdirmək üçün dekoratorun çağırılması deməkdir. Bu addımı həyata keçirmək üçün əsas funksiyanın üstündə "@dekorator_adı" sintaksisi istifadə olunur.
+
+Dekoratorların istifadəsi funksiyaların davranışını dəyişdirmək, funksiya zamanını loglamaq, xətalara cavab vermək və s. kimi bir çox məqsədlərdə istifadə edilir. Python-da built-in dekoratorlar mövcuddur, həmçinin istədiyinizə uyğun öz dekoratorlarınızı da yarada bilərsiniz.
+
+İstifadənin bir nümunəsini aşağıdakı koda baxaraq daha yaxşı anlaya bilərsiniz:
+
+```python
+def dekorator(funksiya):
+    def wrapper():
+        print("Əvvəl funksiya işləyir.")
+        funksiya()
+        print("Sonra funksiya işləyir.")
+    return wrapper
+
+@dekorator
+def salam():
+    print("Salam, Dünya!")
+
+salam()
+
+# output: Əvvəl funksiya işləyir.
+# output: Salam, Dünya!
+# output: Sonra funksiya işləyir.
+```
+
