@@ -117,6 +117,10 @@ Bu repozitoriyada Python ilə bağlı müsahibə sual-cavabları toplanılır. S
 102. [Timsort alqoritmini yerinə yetirmək üçün Python-da proqram yazın](#timsort-alqoritmini-yerinə-yetirmək-üçün-python-da-proqram-yazın)
 103. [Python-da bir sətri tərsinə çevirmək üçün proqram yazın](#python-da-bir-sətri-tərsinə-çevirmək-üçün-proqram-yazın)
 104. [print() funksiyasının parametrləri nələrdir?](#print-funksiyasının-parametrləri-nələrdir)
+---------------
+
+
+
 
 
 # Python nədir?
