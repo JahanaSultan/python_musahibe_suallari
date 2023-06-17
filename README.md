@@ -1,6 +1,6 @@
 ## Python Müsahibə Sual-Cavabları
 
-Bu repozitoriyada Python ilə bağlı müsahibə sual-cavabları toplanılır. Siz də bu repozitoriyaya əlavələr edə bilərsiniz.
+Bu repozitoriyada Python ilə bağlı müsahibə sual-cavabları toplanılır. Siz də bu repozitoriyaya əlavələr edə bilərsiniz. Əlavələriniz üçün pull request göndərə bilərsiniz.
 
 ### İçindəkilər
 
@@ -56,7 +56,7 @@ Bu repozitoriyada Python ilə bağlı müsahibə sual-cavabları toplanılır. S
 44. [Tkiner nədir?](#tkiner-nədir)
 45. [Python tam obyekt yönümlüdürmü?](#python-tam-obyekt-yönümlüdürmü)
 46. [Python-da bütün file prosesləri üçün istifadə olunan modullar nələrdir?](#python-da-bütün-file-prosesləri-üçün-istifadə-olunan-modullar-nələrdir)
-47. [Python-dəki fayl ilə bağlı modulların funksiyaları nədir? Python-dakı fayl ilə bağlı modulların adlarını söyləyə bilərsiniz?](#python-dəki-fayl-ilə-bağlı-modulların-funksiyaları-nədir-python-dakı-fayl-ilə-bağlı-modulların-adlarını-söyləyə-bilərsiniz)
+47. [Python-dəki fayl ilə bağlı modulların funksiyaları nədir?](#python-dəki-fayl-ilə-bağlı-modulların-funksiyaları-nədir)
 48. [with ifadəsinin istifadəsi və sintaksisi necədir?](#with-ifadəsinin-istifadəsi-və-sintaksisi-necədir)
 49. [Faylın məzmununu tərsinə çevirmək üçün funksiya yazın.](#faylın-məzmununu-tərsinə-çevirmək-üçün-funksiya-yazın)
 50. [Python-da "self" nədir?](#python-da-self-nədir)
@@ -65,8 +65,8 @@ Bu repozitoriyada Python ilə bağlı müsahibə sual-cavabları toplanılır. S
 53. [Pythonda *args və **kwargs nə deməkdir?](#pythonda-args-və-kwargs-nə-deməkdir)
 54. [Dublikat elementləri siyahıdan necə siləcəksiniz?](#dublikat-elementləri-siyahıdan-necə-siləcəksiniz)
 55. [Python ilə faylı necə silə bilərəm?](#python-ilə-faylı-necə-silə-bilərəm)
-56. [54. Fayldakı təsadüfi sətri necə oxumaq olar?](#54-fayldakı-təsadüfi-sətri-necə-oxumaq-olar)
-57. [55. Mətn faylında sətirlərin ümumi sayını hesablamaq üçün Python proqramı yazın?](#55-mətn-faylında-sətirlərin-ümumi-sayını-hesablamaq-üçün-python-proqramı-yazın)
+56. [Fayldakı təsadüfi sətri necə oxumaq olar?](#fayldakı-təsadüfi-sətri-necə-oxumaq-olar)
+57. [Mətn faylında sətirlərin ümumi sayını hesablamaq üçün Python proqramı yazın?](#mətn-faylında-sətirlərin-ümumi-sayını-hesablamaq-üçün-python-proqramı-yazın)
 58. [“is”, “not” və “in” operatorlarının məqsədi nədir?](#is-not-və-in-operatorlarının-məqsədi-nədir)
 59. [Python hər dəfə çıxdıqda niyə bütün yaddaş ayrılmır?](#python-hər-dəfə-çıxdıqda-niyə-bütün-yaddaş-ayrılmır)
 60. [Pythonda ternary operatorlardan necə istifadə etmək olar?](#pythonda-ternary-operatorlardan-necə-istifadə-etmək-olar)
@@ -646,4 +646,154 @@ p2.greet() # Hello, my name is Zara and I am 23 years old.
 ```
 
 # Python-da bütün file prosesləri üçün istifadə olunan modullar nələrdir?
-Python-da bütün file prosesləri üçün istifadə olunan modullar `os` və `os.path` modullarıdır. `os` modulu, fayllar və qovluqlar üzərində əməliyyatlar aparmaq üçün istifadə olunur. `os.path` modulu isə fayl və qovluqların yolları ilə işləmək üçün istifadə olunur.
+Python'da file prosesləri üçün əsasən aşağıdakı modullardan istifadə edilir:
+1. `os` modulu: Faylların və qovluqların əməliyyatlarını yerinə yetirmək üçün istifadə olunur. Məsələn, faylın var olub olmadığını yoxlamaq, faylın adını və ya yolunu dəyişdirmək, faylın həcmi və yaranma tarixi kimi məlumatlara əldə etmək üçün istifadə edilir.
+2. `shutil` modulu: Fayl və qovluq əməliyyatlarını təkmilləşdirmək üçün istifadə olunur. Məsələn, faylları kopyalamaq, silmək, yenidən adlandırmaq və s.
+3. `os.path` modulu: Fayl və qovluq yolları ilə əməliyyatlar üçün istifadə olunur. Məsələn, faylın mövcud olub olmadığını yoxlamaq, faylın adını və ya yolunu dəyişdirmək üçün istifadə edilir.
+4. `glob` modulu: Qovluq içindəki faylları və qovluqları axtarmaq üçün istifadə olunur. Axtarışı maska ilə təyin edə bilir və uyğun faylların siyahısını verir.
+
+Bu modullar, fayl yaratmaq, açmaq, oxumaq, yazmaq, silmək, dəyişdirmək və digər fayl əməliyyatlarını yerinə yetirmək üçün müxtəlif funksiyalar və xüsusiyyətlər təmin edir. Hər bir modulun fərqli məqsədləri və funksionalitətləri olduğu üzrə uyğunluğa görə seçilməlidir.
+
+# Python-dəki fayl ilə bağlı modulların funksiyaları nədir?
+Python'da fayllarla bağlı işləmək üçün çeşitli modullar və funksiyalar mövcuddur. İşte ən yaygın olanları:
+
+1. `open()` funksiyası: Faylı açmaq üçün istifadə olunur. `open()` funksiyası bir fayl obyektini qaytarır və bu obyekt vasitəsilə fayl üzərində oxumaq, yazmaq və başqa əməliyyatlar aparmaq mümkün olur.
+2. `read()` funksiyası: Fayldan məlumat oxumaq üçün istifadə olunur. `read()` funksiyası ilə faylın tamamını və ya bəlli bir həcmi oxuya bilərsiniz.
+3. `write()` funksiyası: Fayla məlumat yazmaq üçün istifadə olunur. `write()` funksiyası ilə məlumatları fayla yazmaq mümkündür.
+4. `close()` funksiyası: Faylı bağlamaq və yaddaşdan silmək üçün istifadə olunur. Fayl ilə iş bitdikdən sonra `close()` funksiyası çağırılmalıdır.
+5. `seek()` funksiyası: Faylın oxunacaq/yazılacaq yeri ilə çalışma mövqeyini dəyişmək üçün istifadə olunur. `seek()` funksiyası ilə faylın istənilən mövqeyə getmək mümkündür.
+6. `tell()` funksiyası: Faylın hazırda oxunan/yazılan mövqeyini öyrənmək üçün istifadə olunur. `tell()` funksiyası, faylın mövcud mövqeyini qaytarır.
+
+Bu yalnız bir neçə əsas fayl əməliyyatını əhatə edən funksiyaların sadəcə bir hissəsidir. Python-da fayllarla əlaqədar daha çox modul və funksiya mövcuddur və hər biri farklı funksionallıqlar təmin edir. Fayl ilə bağlı əməliyyatlarınız üçün təyin etdiyiniz məqsədə və tələblərinizə əsaslanaraq uyğun modul və funksiyaları seçməlisiniz.
+
+# `with` ifadəsinin istifadəsi və sintaksisi necədir?
+`with` ifadəsi, Python-dakı fayllarla bağlı əməliyyatlar üçün istifadə olunan bir Python ifadəsidir. `with` ifadəsi, fayl ilə işləmək üçün `open()` funksiyasından istifadə etmək üçün daha sərfəli bir variant kimi istifadə olunur. `with` ifadəsi, faylın açılması, oxunması, yazılması və bağlanması kimi əməliyyatları avtomatik olaraq yerinə yetirir. Bu, fayl ilə işləmək üçün daha təhlükəsiz bir variantdır, çünki faylın bağlanması unudulmaz.
+`with` ifadəsinin sintaksisi aşağıdakı kimidir:
+```python
+with expression [as target]:
+    # İşlənmək istədiyimiz əməliyyatlar
+```
+`with` ifadəsi, `with` bloku daxilindəki əməliyyatları yerinə yetirmək üçün resursu açar, sonra işləyir və nəticədə resursu avtomatik olaraq bağlayır. Bu, fayllar, verilənlər bazaları, ağ yığıcıqları və s. kimi resursları daha təhlükəsiz və səhvə qarşı daha bağlı şəkildə idarə etmək üçün istifadə olunur.
+
+# Faylın məzmununu tərsinə çevirmək üçün funksiya yazın.
+```python
+def reverse_file(file_name):
+    with open(file_name, 'r') as f:
+        lines = f.readlines()
+        lines.reverse()
+
+    with open(file_name, 'w') as f:
+        f.writelines(lines)
+```
+
+# Python-da "self" nədir?
+Python-da `self` bir konvensiyadır ki, onunla bir sinifin nümunəsini (obyektini) göstəririk. `self `-i sinifin metodlarının ilk parametri olaraq yazırıq ki, metodlar sinifin xüsusiyyətlərinə (atributlarına) və digər metodlarına müraciət edə bilsin. Məsələn: 
+```python 
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        print(f"Hello, my name is {self.name} and I am {self.age} years old.")
+```
+Bu sinifdə `__init__()` və `greet()` metodlarının ilk parametri `self`-dir. Bu sayədə metodlar sinifin name və age xüsusiyyətlərinə müraciət edir. Sinifdən bir nümunə yaratdıqda `self` parametrini verməyimiz lazım deyil, çünki Python onu avtomatik olaraq özü doldurur. Məsələn: 
+```python
+p = Person("Ali", 25) # "self" vermirk
+p.greet() # Hello, my name is Ali and I am 25 years old.
+```
+
+# Yazmaq üçün c:\hello.txt faylını açmaq əmrini yazın?
+```python
+with open("c:\\hello.txt", "w") as f:
+    pass
+```
+
+# len() nə edir?
+`len()` Python dilində bir built-in funksiyadır və bir verilənin (məsələn, bir sıra, bir siyahı, bir sözlər kimi) uzunluğunu ölçmək üçün istifadə olunur.
+
+`len()` funksiyası bir veri obyektini qəbul edir və onun elementlərinin sayını (uzunluğunu) qaytarır. Elementlərin sayıları genelliklə veri tipinə və obyektin strukturuna bağlı olaraq dəyişə bilir.
+
+İstifadə nümunəsi:
+
+```python
+my_list = [1, 2, 3, 4, 5]
+length = len(my_list)
+print(length)  # Çıxış: 5
+```
+
+Bu nümunədə `len()` funksiyası `my_list` adlı siyahının uzunluğunu hesablayır və nəticə olaraq 5 dəyərini qaytarır. `my_list`in daxilindəki elementlərin sayısı 5-dir, buna görə də `len(my_list)` 5 olaraq qiymətləndirilir. `length` adlı dəyişənə mənimsədilən dəyər `print()` funksiyası vasitəsilə çapa verilir.
+
+# Pythonda *args və **kwargs nə deməkdir?
+`*args` və `**kwargs` Python dilində funksiyaların parametrlərini dəyişkən sayıda argümanlarla işləmək üçün istifadə olunan özel parametrlərdir.
+
+`*args` parametri bir funksiya tərəfindən qəbul edilən dəyişən sayıda pozisiya parametrlərinin bir tuple kimi toplanmasına imkan verir. `*` operatoru ilə işarələnmiş bir parametr funksiyaya istənilən sayda pozisiya argümalarını ötürə bilər. `args` sözü əks olunmuş kimi seçilmişdir, amma əsasən konvensiya olaraq istifadə edilir.
+İstifadə nümunəsi:
+
+```python
+def my_function(*args):
+    for arg in args:
+        print(arg)
+
+my_function(1, 2, 3)
+```
+Bu nümunədə `my_function` adlı funksiya `*args` parametri ilə təyin edilmişdir. Bu funksiya daxilində, parametrlər tuple kimi toplanır və ardıcıl şəkildə çap olunur. `my_function(1, 2, 3)` şəklində funksiyanı çağıranda, `args` tuple-i (1, 2, 3) olacaq və dövr vasitəsilə hər bir element ayrı ayrı çap olunacaq.
+
+`**kwargs` parametri isə funksiya tərəfindən qəbul edilən dəyişən sayıda adlandırılmış parametrlərin bir lüğət kimi toplanmasına imkan verir. `**` operatoru ilə işarələnmiş bir parametr funksiyaya istənilən sayda adlandırılmış argümanları ötürə bilər. `kwargs` sözü əks olunmuş kimi seçilmişdir, amma əsasən konvensiya olaraq istifadə edilir.
+
+İstifadə nümunəsi:
+
+```python
+def my_function(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+my_function(name="John", age=25, city="London")
+```
+Bu nümunədə `my_function` adlı funksiya `**kwargs` parametri ilə təyin edilmişdir. Bu funksiya daxilində, adlandırılmış parametrlər lüğət kimi toplanır və hər bir parametr üçün ad və dəyər ayrı ayrı çap olunur. `my_function(name="John", age=25, city="London")` şəklində funksiyanı çağıranda, `kwargs` lüğəti {"name": "John", "age": 25, "city": "London"} olacaq və dövr vasitəsilə hər bir ad və dəyər ayrı ayrı çap olunacaq.
+
+
+# Dublikat elementləri siyahıdan necə siləcəksiniz?
+- Set istifadə edərək
+```python
+my_list = [1, 2, 3, 1, 2, 5, 6, 7, 8]
+my_list = list(set(my_list))
+print(my_list)  # Output: [1, 2, 3, 5, 6, 7, 8]
+```
+- List comprehension istifadə edərək
+```python
+my_list = [1, 2, 3, 1, 2, 5, 6, 7, 8]
+my_list = [x for n, x in enumerate(my_list) if x not in my_list[:n]]
+print(my_list)  # Output: [1, 2, 3, 5, 6, 7, 8]
+```
+- Dövr istifadə edərək
+```python
+my_list = [1, 2, 3, 1, 2, 5, 6, 7, 8]
+new_list = []
+for i in my_list:
+    if i not in new_list:
+        new_list.append(i)
+print(new_list)  # Output: [1, 2, 3, 5, 6, 7, 8]
+```
+
+# Python ilə faylı necə silə bilərəm?
+```python
+import os
+os.remove("file.txt")
+```
+
+# Fayldakı təsadüfi sətri necə oxumaq olar?
+```python
+import random
+with open("file.txt", "r") as f:
+    lines = f.readlines()
+    random_line = random.choice(lines)
+    print(random_line)
+```
+
+# Mətn faylında sətirlərin ümumi sayını hesablamaq üçün Python proqramı yazın?
+```python
+with open("file.txt", "r") as f:
+    lines = f.readlines()
+    print(len(lines))
+```
