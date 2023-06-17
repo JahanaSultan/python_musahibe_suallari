@@ -236,5 +236,30 @@ Bu bizə 'alma' sözünün qarşılığının 'apple' olduğunu açıq şəkild�
 ```python
 my_dict = {'alma':'apple'}
 ```
-Dictionary `key-value` (anahtar-qiymət) cütlüyü ilə təmsil olunur. Burada 'alma' `key` (anahtar) və 'apple' isə `value` (qiymət) kimi təmsil olunur. Dictionary, düzgün sıra indeksi ilə deyil, key vasitəsilə məlumatlara çatmağa imkan verir. Hər bir `key`, müəyyən bir qiymətə əsasən bənzərsiz və tək olmalıdır. Sözlər dəyişdirilə bilən və müxtəlif verilənləri saxlamaq üçün əlverişlidir.
+Dictionary `key-value` cütlüyü ilə təmsil olunur. Burada 'alma' `key` və 'apple' isə `value` kimi təmsil olunur. Dictionary sıra indeksi ilə deyil, `key` vasitəsilə məlumatlara çatmağa imkan verir. Hər bir `key`, müəyyən bir qiymətə əsasən bənzərsiz və tək olmalıdır. Sözlər dəyişdirilə bilən və müxtəlif verilənləri saxlamaq üçün əlverişlidir.
 
+# Python-da funksiyalar nədir?
+Funksiyalar sadəcə çağrıldığı zaman işləyən kod bloklarıdır. Funksiyalar proqramımızı daha kiçik və modul hissələrə ayırmağa kömək edir. Proqramımız getdikcə böyüdükcə, funksiyalar onu daha mütəşəkkil və idarəolunan edir. Pythonda funksiya olaraq adlandırılan proses digər programlaşdırma dillərinin bəzilərində “rutin” və ya “prosedur” olaraq adlandırılır. Həqiqətəndə funksiyalar rutin olaraq təkrarlanan tapşırıqları tək bir ad altında birləşdirir və bizi gərəksiz təkrardan qurtardığı kimi ən önəmlisi vaxt itkisinin qarşısını almış olur. Pythonu öyrənməyə ilk başladığımızda funksiyayla artıq tanış olmuş oluruq, `print()` özü bir funksiyadır və biz ondan heçbir kod yazmadan rahatlıqla istifadə edə bilirik.
+
+# Python-də init nədir?
+Python siniflərində qorunan init metodu obyekt yönümlü proqramlaşdırma (OOP) terminologiyasındakı konstruktorlar kimi eyni məqsədə xidmət edir. Yeni obyekt yaradıldıqda init metodu avtomatik çağırılır, obyekti işə salır və onun üçün yaddaş ayırır. Bu üsul həm də dəyişənlər üçün ilkin dəyərləri təyin etmək üçün istifadə edilə bilər. İnit metodunun içində sinifin daxili dəyişənlərini təyin edə bilərsiniz. İnit metodunun birinci parametri "self"dir, bu, metodun özünə bir referansdır və sinifdəki digər metodlarda olduğu kimi istifadə olunur. Aşağıdakı sintaksis ilə tətbiq olunur:
+
+```python
+class SinifAdi:
+    def __init__(self, parametr1, parametr2):
+        self.parametr1 = parametr1
+        self.parametr2 = parametr2
+```
+# Python-də yayğın olaraq istifadə olunan built-in data types nələrdir?
+Python-də bir sıra built-in verilən tipləri mövcuddur. Bəzi əsas built-in verilən tiplər aşağıdakılardır:
+
+1. Integer: Tam ədədi ifadə etmək üçün istifadə olunan verilən tipidir. Misal üçün: `x = 5`
+2. Float: Ondalıq ədədi ifadə etmək üçün istifadə olunan verilən tipidir. Misal üçün: `y = 3.14`
+3. String (Simvol sətiri): Mətnləri ifadə etmək üçün istifadə olunan verilən tipidir. Misal üçün: `name = "John"`
+4. Boolean: İstənilən məntiqi dəyərləri ifadə etmək üçün istifadə olunan verilən tipidir. İki dəyərə malik olur - `True` və `False`.
+5. List: Birdən çox veriləni bir yerə toplamaq üçün istifadə olunan verilən tipidir. Siyahı içində müxtəlif dəyişənlər saxlaya bilərsiniz. Misal üçün: `numbers = [1, 2, 3, 4, 5]`
+6. Tuple: Birdən çox veriləni qruplaşdırmaq üçün istifadə olunan verilən tipidir. Tuple dəyişdirilə bilməzdir (immutable) və () ardıcıllığı ilə ifadə olunur. Misal üçün: `point = (3, 5)`
+7. Dictionary: Açar-qıymət cütlüyündən ibarət olan verilən tipidir. Açarlarla qiymətlərə uyğun gələn verilənləri saxlayır. Misal üçün: `person = {"name": "John", "age": 30, "city": "London"}`
+8. Set: Birləşik verilənləri toplamaq üçün istifadə olunan verilən tipidir. Təkrarlanan dəyərlərə imkan vermir və sırasızdır. Misal üçün: `fruits = {"apple", "banana", "orange"}`
+
+Bu yalnız bir neçə builtin verilən tipidir və Python-da daha çox verilən tipi mövcuddur. Hər bir verilən tipi özünəməxsus xüsusiyyətlərə və əməliyyatlara malikdir və proqramçıya çeşit
