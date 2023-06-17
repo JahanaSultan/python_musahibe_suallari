@@ -222,7 +222,7 @@ Python-da, fərqli növ miras alma formalarını var. Ən yaygın olanları aşa
 Miras alma, kodun yeniden istifadəsini və təşkilatını təmin edir. Üst siniflərdən miras alan alt siniflər, üst sinifdə mövcud olan funksianı təkrar yazmağa ehtiyac duymadan onu istifadə edə bilir. Bu, kodun daha oxunaqlı, düzgün və genişlənən bir struktura malik olmasını təmin edir. Həmçinin, miras alma, obyek yönümlü proqramlaşdırma paradigmalarında polimorfizm və yüklənmiş metodların tətbiqini dəstəkləyir.
 
 # Scope resolution nədir?
-Python-da scope resolution (sahe həlli), bir adın hansı ad sahəsinə aid olduğunu tapmaq üçün istifadə olunan prosesdir. Python-da ad sahələri, adların mövcudluğunu və görünürlüyünü tənzimləyir. Onlar ad konfliktlərini önləyir və adlara düzgün bir şəkildə çatmağa imkan verir.
+Python-da scope resolution, bir adın hansı ad sahəsinə aid olduğunu tapmaq üçün istifadə olunan prosesdir. Python-da ad sahələri, adların mövcudluğunu və görünürlüyünü tənzimləyir. Onlar ad konfliktlərini önləyir və adlara düzgün bir şəkildə çatmağa imkan verir.
 - Global Ad Sahəsi: Global ad sahəsi, bir Python skriptinin daxilində, yəni bütün modulda əldə edilən adlara görünürlük təmin edir. Global adlar, skriptin istifadə etdiyi modullardan daxil olunan funksiyalar və siniflər arasında görünə bilər. Həmçinin, global adlar, bir moduldan başqa bir modula import edilən adlar kimi də əldə edilə bilər.
 - Local Ad Sahəsi: Yerli ad sahəsi, bir funksiyanın daxilində tanımlanan adlara görünürlük təmin edir. Yerli adlar, yalnız funksiya tərəfindən əldə edilə bilər və digər funksiyalar tərəfindən gizli qalır. Yerli ad sahəsi, hər bir funksiya tətbiqində müstəqil olaraq yaradılır və funksiyanın icrası zamanı aktivdir.
 - Enclosing Ad Sahəsi: Enclosing ad sahəsi, bir iç funksiyanın daxilində tanımlanan adlara görünürlük təmin edir. Bu ad sahəsi, iç funksiyaların daxilində yerləşən funksiya tərəfindən təyin olunur. İç funksiya, əvvəlki funksiyanın daxilindəki adlara çatmağa imkan verir və bu sayədə hər bir iç funksiya öz "qabaqcadan" yerli ad sahəsini əldə edir.
@@ -382,3 +382,28 @@ def func():
         print("World")
 ```
 Sintaksis səhvi verir, çünki ikinci print ifadəsi ilkin sıra sayısından fərqlidir.
+
+# "break", "continue" və "pass" ifadələri necə işləyir?
+`break`, `continue` və `pass` ifadələri Python-da dövr (loop) ilə işləyərkən istifadə olunan nəzarət ifadələridir. Onlar dövrün icrasını normal ardıcıllıqdan dəyişdirirlər. Bu ifadələrin mənası və istifadəsi aşağıdakı kimi izah olunur:
+- `break` ifadəsi dövrü tamamilə dayandırır və dövrün xaricindəki kodun icrasına keçir. Bu ifadə əsasən xarici bir şərtin təsiri ilə dövrü bitirmək üçün istifadə olunur. Məsələn:
+```python
+for i in range(10):
+    print(i)
+    if i == 5:
+        break # 5-dən sonra dövrü dayandır
+```
+Bu kod 0-dan 9-a qədər olan rəqəmləri çap edir, lakin i = 5 olduqda `break` ifadəsi ilə dövrü dayandırır.
+- `continue` ifadəsi cari iterasiyanı dayandırır və dövrün növbəti iterasiyasına keçir. Bu ifadə əsasən dövrün bütün kodunu icra etmədən bir hissəsini ötürmək üçün istifadə olunur. Məsələn:
+```python
+for i in range(10):
+    if i % 2 == 0:
+        continue # cüt rəqəmlilri ötür
+    print(i)
+```
+Bu kod 0-dan 9-a qədər olan rəqəmlərin yalnız tək olanlarını çap edir, cüt olanlar üçün `continue` ifadsi ilə cari iterasiya ötürülür.
+- `pass` ifadəsi heç bir şey etmir və kodun icrasını davam etdirir. Bu ifadsi əsasən boş blokları yaratmaq üçün istifad olunur. Mǝsǝlǝn:
+```python
+for i in range(10):
+    pass # boş dövr
+```
+Bu kod heç bir şey çap etmir, çünki dövrün içində `pass` ifadəsindən başqa heç bir şey yoxdur. pass ifadəsi funksiyaları, sinifləri və ya şərt bloklarını da boş saxlamaq üçün istifadə oluna bilər.
