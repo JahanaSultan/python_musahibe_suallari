@@ -6,8 +6,8 @@ Bu repozitoriyada Python ilə bağlı müsahibə sual-cavabları toplanılır. S
 
 ### Basic Python müsahibə sualları
 
-1. [Python nədir?](###python-nədir)
-2. [Pythonun versiyaları](###pythonun-versiyaları)
+1. [Python nədir?](#python-nədir)
+2. [Pythonun versiyaları](#pythonun-versiyaları)
 3. [Pythonun faydaları](#pythonun-faydaları)
 4. [Pythonun dezavantajları](#pythonun-dezavantajları)
 5. [Pythonun istifadə sahələri](#pythonun-istifadə-sahələri)
@@ -118,10 +118,10 @@ Bu repozitoriyada Python ilə bağlı müsahibə sual-cavabları toplanılır. S
 103. [Python-da bir sətri tərsinə çevirmək üçün proqram yazın](#python-da-bir-sətri-tərsinə-çevirmək-üçün-proqram-yazın)
 
 
-### Python nədir?
+# Python nədir?
 Python proqramlaşdırma dili Guido van Rossum tərəfindən yaradılmışdır və 1991-ci ildən bəri inkişaf etdirilir. Python, yüksək səviyyəli bir proqramlaşdırma dilidir. Şəffaf sintaksisi, sadə sintaksis qaydaları və geniş bir standart kitabxana ilə xüsusiyyətlənir. Python-da yazılan proqramlar bir çox sahələrdə tətbiq edilir: web proqramlaşdırma, data analitika, süni intellekt, oyun proqramlaşdırma və daha çoxu. Python geniş bir cəmiyyət tərəfindən dəstəklənir və açıq mənbəlidi. Bu, istifadəçilərə geniş bir dəstək və resurslar təmin edir. Python öyrənilməsi asan və effektiv olmağı ilə tanınan bir dildir.
 
-### Pythonun versiyaları 
+# Pythonun versiyaları 
 Python 2 və Python 3 olmaqla iki əsas versiyası var. Python 2-nin ən son versiyası 2.7 idi. Python 2-nin ən son versiyası 2020-ci ildən sonra dəstəklənmir. Python 3.0 3 dekabr 2008-ci ildə buraxıldı. O, əvvəlki versiyada müəyyən qüsurları düzəltmək üçün nəzərdə tutulmuşdu. 
 
 
