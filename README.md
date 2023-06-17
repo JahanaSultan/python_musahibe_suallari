@@ -797,3 +797,241 @@ with open("file.txt", "r") as f:
     lines = f.readlines()
     print(len(lines))
 ```
+
+# “is”, “not” və “in” operatorlarının məqsədi nədir?
+- `is` operatoru, iki obyektin eyni obyekt olub-olmadığını yoxlamaq üçün istifadə olunur. 
+- `not` operatoru, bir şərt ifadəsinin əksinə çevirmək üçün istifadə olunur.
+- `in` operatoru, bir obyektin digər bir obyektin daxilində olub-olmadığını yoxlamaq üçün istifadə olunur.
+
+# Python hər dəfə çıxdıqda niyə bütün yaddaş ayrılmır?
+Python dilində, hər dəfə bir skripti başladıqda bütün yaddaşın ayrılmamasının əsas səbəbi effektiv yaddaş istifadəsidir. Python bir interpreter dilidir və kodu sətir-sətir oxuyaraq hər bir sətirdən keçəndə ayrı yaddaş bölmələri yaradır.
+
+Python'un yaddaş idarəetməsi iki əsas prinsipə əsaslanır: referans sayma və çöp toplama (garbage collection).
+
+Referans sayma, hər bir obyektin referans sayını (yəni ona istinad edən dəyişənlərin sayını) qeyd edərək yaddaşın idarə olunmasını təmin edir. Bir obyekti istifadə etdiyimizdə onun referans sayı artırılır, istifadədən sonra isə azalır. Bir obyektin referans sayı 0-a düşdükdə (yəni ona heç bir istinad qalmadıqda) çöp toplama prosesi onu avtomatik olaraq yaddaşdan silir.
+
+Çöp toplama (garbage collection) isə artıq istifadə edilməyən obyektlərin yaddaşdan silinməsinə və yaddaşın təmizlənməsinə kömək edir. Çöp toplama prosesi zamanla işləyir və artıq referansı olmayan obyektləri təyin edir və onları yaddaşdan silir.
+
+# Pythonda ternary operatorlardan necə istifadə etmək olar?
+Python dilində ternary operator (`if-else` operatoru) istifadə edərək qısa şəkildə şərt əsasında dəyişənləri təyin etmək mümkündür. Ternary operatorun sintaksisi aşağıdakı kimi görünür:
+
+```
+<expression1> if <condition> else <expression2>
+```
+
+Burada `<condition>` şərt ifadəsidir. Əgər bu şərt doğru (`True`) olarsa, `<expression1>` qiyməti təyin olunur, əks halda isə `<expression2>` qiyməti təyin olunur.
+
+Nümunəyə baxaq:
+
+```python
+x = 10
+y = 20
+
+max_value = x if x > y else y
+print(max_value)  # Output: 20
+```
+
+Bu nümunədə `x` və `y` dəyişənləri verilib. Ternary operator vasitəsilə, əgər `x` dəyişəni `y` dəyişənindən böyükdürsə, `max_value` dəyişəninə `x` qiyməti təyin olunur, əks halda isə `y` qiyməti təyin olunur.
+
+Ternary operator, kodun daha qısa və oxunması daha asan olmasını təmin edir və müəyyən şərtə əsaslanan dəyişən təyinatlarında istifadə olunur.
+
+# Python array-nə dəyərləri necə əlavə etmək olar?
+Python'da `array` modulu, performansı yüksək array (siyahı) veri tipini dəstəkləyir. Array modulu, bellek əlçatanlılığı və effektiv yaddaş idarəetməsi üçün optimallaşdırılmış dəyərlər ilə çalışmağa imkan verir.
+
+Array veri tipinə dəyər əlavə etmək üçün aşağıdakı addımaları izləyə bilərsiniz:
+
+1. Array modulunu import edin:
+```python
+import array
+```
+2. Bir array yaratmaq üçün `array.array()` funksiyasını istifadə edin. Bu funksiya, dəyərlərin tipini və başlanğıc elementlərini tələb edir. Məsələn, ədədlər array-i yaratmaq üçün:
+```python
+numbers = array.array('i', [1, 2, 3, 4, 5])
+```
+Burada `'i'` dəyəri, ədədlərin (integer) array-i olduğunu bildirir. Başqa tip dəyərlər üçün uyğun tip kodunu istifadə edə bilərsiniz. Dəyərləri boş array yaratmaq üçün başlangıca heç bir dəyər vermədən `array.array()` funksiyasını istifadə edə bilərsiniz.
+3. Dəyər əlavə etmək üçün `append()` metodu ilə array-ə dəyər əlavə edə bilərsiniz:
+```python
+numbers.append(6)
+```
+Bu nümunədə, `numbers` array-ə 6 rəqəmini əlavə edirik.
+4. Dəyərləri istədiyiniz kimi təyin edə bilərsiniz:
+   ```python
+   numbers[0] = 10
+   numbers[2] = 30
+   ```
+Bu nümunədə, əvvəlki 0-cı və 2-ci indekslərə uyğun olaraq dəyərləri dəyişdiririk.
+
+# Python array-indəki dəyərləri necə silmək olar?
+Dəyərləri silmək və ya array-dən çıxartmaq üçün də `remove()` və ya `pop()` metotlarını istifadə edə bilərsiniz.
+
+# Python-da ədədi siyahını sort etmək üçün kod yazın?
+```python
+my_list = [3, 5, 1, 2, 4]
+my_list.sort()
+print(my_list)  # Output: [1, 2, 3, 4, 5]
+```
+```python
+my_list = [3, 5, 1, 2, 4]
+new_list = sorted(my_list)
+print(new_list)  # Output: [1, 2, 3, 4, 5]
+```
+```python
+data_list = [120, 60, 80, 1, -8, 20, 15, -18]
+new_list = []
+
+while data_list:
+    minimum = data_list[0]
+    for x in data_list: 
+        if x < minimum:
+            minimum = x
+    new_list.append(minimum)
+    data_list.remove(minimum)    
+
+print(new_list)
+# Output: [-18, -8, 1, 15, 20, 60, 80, 120]
+```
+
+# Python-da sorting alqoritmləri nələrdir?
+Python-da sorting alqoritmləri aşağıdakı kimidir:
+- Bubble Sort: Ən sadə və ən yavaş sorting alqoritmidir. Ardıcıllığın elementlərini qarşılaşdıraraq və yerlərini dəyişdirərək sıralayır.
+- Insertion Sort: Ardıcıllığı elementlərini bir-bir seçib uyğun yerdǝ yerlǝşdirir.
+- Selection Sort: Ardıcıllığı elementlərini ən kiçik və ya ən böyük elementi taparaq və onu uyğun yerdǝ yerlǝşdirir.
+- Merge Sort: Ardıcıllığı iki hissǝyǝ bölür, hǝr hissǝni ayrıca sıralayır vǝ sonra birlǝşdirir.
+- Quick Sort: Ardıcıllığı bir pivot elementin Ətrafında bölür, pivotdan kiçik elementlǝri sol tǝrǝfǝ, böyük elementlǝri isǝ sağ tǝrǝfǝ yerlǝşdirir vǝ sonra hǝr hissǝni ayrıca sıralayır.
+- Heap Sort: Ardıcıllığı bir max-heap yaradır vǝ hǝr addımda root elementi silir vǝ sonuncu element ilǝ ƏvƏzlƏyir.
+- Timsort: Python-un built-in sort funksiyasının istifadƏ etdiyi alqoritmdir. Merge sort vǝ insertion sort-un birləşməsidir. və s.
+
+merge sort, quick sort, heap sort vǝ timsort alqoritmlƏri Ən sürətli vǝ Ən effektiv alqoritmlƏrdir. Bubble sort, insertion sort vǝ selection sort isǝ Ən yavaş vǝ Ən az effektiv alqoritmlƏrdir.
+
+# Fayldakı böyük hərflərin sayını hesablamaq üçün effektiv kod yaza bilərsinizmi?
+```python
+with open("file.txt", "r") as f:
+    data = f.read()
+    count = sum(1 for c in data if c.isupper())
+    print(count)
+```
+
+# Python-da bir siyahını necə tərsinə çevirmək olar?
+```python
+my_list = [1, 2, 3, 4, 5]
+my_list.reverse()
+print(my_list)  # Output: [5, 4, 3, 2, 1]
+```
+```python
+my_list = [1, 2, 3, 4, 5]
+new_list = my_list[::-1]
+print(new_list)  # Output: [5, 4, 3, 2, 1]
+```
+```python
+my_list = [1, 2, 3, 4, 5]
+new_list = []
+for i in range(len(my_list)):
+    new_list.append(my_list.pop())
+print(new_list)  # Output: [5, 4, 3, 2, 1]
+```
+
+# Python-da list-dən sonuncu obyekti necə siləcəksiniz?
+```python
+my_list = [1, 2, 3, 4, 5]
+my_list.pop()
+print(my_list)  # Output: [1, 2, 3, 4]
+```
+```python
+my_list = [1, 2, 3, 4, 5]
+del my_list[-1]
+print(my_list)  # Output: [1, 2, 3, 4]
+```
+```python
+my_list = [1, 2, 3, 4, 5]
+my_list.remove(my_list[-1])
+print(my_list)  # Output: [1, 2, 3, 4]
+```
+
+# Python-da bir siyahıda təkrarlanan elementləri necə tapa bilərəm?
+```python
+my_list = [1, 2, 3, 1, 2, 5, 6, 7, 8]
+duplicates = list(set([x for x in my_list if my_list.count(x) > 1]))
+print(duplicates)  # Output: [1, 2]
+```
+```python
+my_list = [1, 2, 3, 1, 2, 5, 6, 7, 8]
+duplicates = []
+for x in my_list:
+    if my_list.count(x) > 1 and x not in duplicates:
+            duplicates.append(x)
+
+print(duplicates)  # Output: [1, 2]
+```
+
+# Python-da təsadüfi ədədləri necə yaratmaq olar?
+```python
+import random
+print(random.randint(0, 9))  # Output: 7
+```
+```python
+import random
+print(random.randrange(0, 9))  # Output: 7
+```
+```python
+import random
+print(random.random())  # Output: 0.5458142859366703
+```
+```python
+import random
+print(random.uniform(0, 9))  # Output: 7.421052065120872
+```
+
+# Bir sətri kiçik hərflərə necə çevirmək olar?
+```python
+my_string = "Hello World"
+print(my_string.lower())  # Output: hello world
+```
+
+# Python-da bir sətri böyük hərflərlə necə çevirmək olar?
+```python
+my_string = "Hello World"
+print(my_string.upper())  # Output: HELLO WORLD
+```
+
+# Niyə Python-da list-lər əvəzinə NumPy array-lərindən istifadə edilir?
+NumPy array-ləri, Python list-lərindən daha effektivdir. NumPy array-ləri, effektiv yaddaş idarəetməsi üçün optimallaşdırılmışdır və yaddaşda daha az yer tutur. 
+
+# Python-da polimorfizm nədir?
+Python-da polimorfizm, fərqli siniflərin eyni adlı metodlara sahib olması və ya eyni adlı funksiyaların fərqli tipli parametrlərlə işləməsi deməkdir. Polimorfizm, obyektlərin fərqli davranışlar göstərməsinə imkan verir. Python-da polimorfizmin iki növü var: 
+
+- Overriding: Bu növ polimorfizmdə, törəmə (inheritance) ilə əlaqəlidir. Bir sinifin metodunu digər sinifdə eyni adla yenidən yazmaq mümkündür. Bu halda, törəmiş sinifin metodunun davranışı əsas sinifin metodundan fərqli olur. Məs:
+```python
+class Animal:
+    def sound(self):
+        print("Animal makes a sound")
+
+class Dog(Animal):
+    def sound(self):
+        print("Dog barks")
+
+class Cat(Animal):
+    def sound(self):
+        print("Cat meows")
+
+a = Animal()
+d = Dog()
+c = Cat()
+
+a.sound() # Animal makes a sound
+d.sound() # Dog barks
+c.sound() # Cat meows
+```
+Bu nümunədə, Animal sinifində `sound()` metodu var. Dog və Cat sinifləri isə Animal sinifindən törəyir və `sound()` metodunu yenidən yazır. Bu saydə, hər sinifin obyekti `sound()` metodunu çağırdıqda fərqli səslər çıxarır.
+
+- Overloading: Bu növ polimorfizmdə, eyni adlı funksiyaların farklı sayda və ya tipli parametrlərlə işlǝmǝsi mümkündür. Python-da overloading üçün xüsusi sintaksis yoxdur, ancaq *args vǝ **kwargs kimi konvensiyalardan istifadǝ edilir⁴. Mǝs:
+```python
+def add(a, b):
+    return a + b
+
+def add(a, b, c):
+    return a + b + c
+
+print(add(1, 2)) # 3
+print(add(1, 2, 3)) # 6
+```
+Bu nümunǝdǝ add funksiyası iki vǝ ya üç parametr qǝbul edir vǝ onların cǝmini qaytarır. Python-da funksiyaların adları üzrǝ yazıldığı üçün son yazılan funksiyadan istifadǝ olunur.
