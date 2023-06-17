@@ -1035,3 +1035,14 @@ print(add(1, 2)) # 3
 print(add(1, 2, 3)) # 6
 ```
 Bu nümunǝdǝ add funksiyası iki vǝ ya üç parametr qǝbul edir vǝ onların cǝmini qaytarır. Python-da funksiyaların adları üzrǝ yazıldığı üçün son yazılan funksiyadan istifadǝ olunur.
+
+# Python-da inkapsulyasiya nədir?
+Inkapsulyasiya, Python dilində bir obyektin iç məlumatları və funksiyaları, digər obyektlərə və xarici tərəfə qarşı gizlədilməsi və məhdudlaşdırılması deməkdir. Bu, bir obyektin iç məlumatlarına yalnız həmin obyektin metodları vasitəsilə müraciət etmək məcburiyyətini tətbiq edir.
+
+Python'da inkapsulyasiya üçün aşağıdakı mehanizmalar mövcuddur:
+
+1. **Access Modifiers (Məhdudiyyət Göstəriciləri)**: Python dilində dəyişənlər və metodlar üçün public, private və protected olmağa dair formal access modifiers mövcud deyildir. Lakin, konvensiya olaraq `_` (alt xətt) ilə başlayan bir dəyişən və ya metod, həmin dəyişənin və ya metodun "protected" olduğunu göstərir. İstifadəçilərə məhdudiyyət tətbiq etmək isə proqramçının sorumluluğundadır.
+2. **Getter və Setter metodları**: Bir obyektin iç məlumatlarına məhdudiyyət tətbiq etmək üçün getter və setter metodları istifadə edilə bilər. Getter metodları obyektin məlumatlarını almaq üçün, setter metodları isə obyektin məlumatlarını dəyişmək üçün istifadə olunur. Bu metodlar vasitəsilə məlumatların düzgün bir şəkildə əldə edilməsi və dəyişdirilməsi təmin edilir.
+3. **Property decorator**: Python'da `@property` decorator'u ilə bir dəyişənin məhdudiyyəti tətbiq edilə bilər. Bu decorator vasitəsilə dəyişəni metod kimi əldə etmək, dəyişmək və ya silmək üçün istifadə edə bilərik. Bu, dəyişənin daxilindəki işləmələrə nəzarət etməyə imkan verir və dəyişənin dəyərlərini tənzimləyir.
+
+Inkapsulyasiya, bir obyektin iç məlumatlarının gizlədilməsi və yalnız obyektin tərəfından müraciət edilməsi prinsipi ilə daha məhdudiyyətli və təhlükəsiz kodlar yazmağa imkan verir. Bu sayədə, məlumatlara təsadüfi dəyişikliklər edilməsi və kodun istifadəsi
