@@ -13,7 +13,7 @@ Bu repozitoriyada Python ilə bağlı müsahibə sual-cavabları toplanılır. S
 5. [Pythonun istifadə sahələri](#pythonun-istifadə-sahələri)
 6. [Listləri tuple-lardan ayıran nədir?](#listləri-tuple-lardan-ayıran-nədir)
 7. [pep8 nədir?](#pep8-nədir)
-8. [Python-un əsas xüsusiyyətləri nələrdir?](#python-un-əsas-xüsusiyyətləri-nələrdir)
+<!-- 8. [Python-un əsas xüsusiyyətləri nələrdir?](#python-un-əsas-xüsusiyyətləri-nələrdir) -->
 9. [Python-da yaddaş necə idarə olunur?](#python-da-yaddaş-necə-idarə-olunur)
 10. [PYTHONPATH nədir?](#pythonpath-nədir)
 11. [Python modulları nələrdir?](#python-modulları-nələrdir)
@@ -22,9 +22,9 @@ Bu repozitoriyada Python ilə bağlı müsahibə sual-cavabları toplanılır. S
 14. [ Scope resolution nədir?](#scope-resolution-nədir)
 15. [Python-da dictionary nədir?](#python-da-dictionary-nədir)
 16. [Python-da funksiyalar nədir?](#python-da-funksiyalar-nədir)
-17. [Python-də __init__ nədir?](#python-də-__init__-nədir)
-18. [Python-də yayğın olaraq istifadə olunan built-in data types nələrdir?](#python-də-yayğın-olaraq-istifadə-olunan-built-in-data-types-nələrdir)
-19. [Python-də lokal dəyişənlər və global dəyişənlər nələrdir?](#python-də-lokal-dəyişənlər-və-global-dəyişənlər-nələrdir)
+17. [Python-da __init__ nədir?](#python-da-__init__-nədir)
+18. [Python-da yayğın olaraq istifadə olunan built-in data types nələrdir?](#python-da-yayğın-olaraq-istifadə-olunan-built-in-data-types-nələrdir)
+<!-- 19. [Python-da lokal dəyişənlər və global dəyişənlər nələrdir?](#python-da-lokal-dəyişənlər-və-global-dəyişənlər-nələrdir) -->
 20. [Python-da type conversion nədir?](#python-da-type-conversion-nədir)
 21. [Windows üzərində Pythonun quraşdırılması və sistem yolu dəyişənin təyini necə edilir?](#windows-üzərində-pythonun-quraşdırılması-və-sistem-yolu-dəyişənin-təyini-necə-edilir)
 22. [Python'da array-lər və list-lər arasındakı fərq nədir?](#python-da-array-lər-və-list-lər-arasındakı-fərq-nədir)
@@ -165,8 +165,6 @@ Python, çox tərəfli bir dildir. Pythonun istifadə sahələri:
 Python-da PEP, Python Enhancement Proposal deməkdir. O, maksimum aydınlıq və oxunaqlılığı təmin etmək üçün Python kodunun hazırlanması və strukturlaşdırılması üçün optimal yanaşmanı əks etdirən təlimatlar toplusundan ibarətdir.
 PEP 8, Python dilində kod yazarkən daha düzgün tərtibatlanmış və oxunaqlı kodlar üçün bir qayda kitabçası kimi düşünülə bilər.
 
-# Python-un əsas xüsusiyyətləri nələrdir?
-
 # Python-da yaddaş necə idarə olunur?
 - Yaddaşın ayrılması: Bir Python proqramı başladıqda, yaddaşda programın dəyişənləri, obyektləri və digər məlumatları saxlamaq üçün lazım olan yer ayrılır. Bu prosesə yaddaşın ayrılması deyilir.
 - Yaddaşın istifadəsi: Proqram işləndikcə, dəyişənlər, obyektlər və digər məlumatlar yaddaşda saxlanır və istifadə olunur. Python, yaddaşın avtomatik idarə edilməsini təmin edir, yəni proqramçının bu prosesi idarə etməsinə ehtiyac yoxdur. Python yaddaş idarə etmək üçün bir məkan toplama (garbage collection) mexanizması istifadə edir.
@@ -241,7 +239,7 @@ Dictionary `key-value` cütlüyü ilə təmsil olunur. Burada 'alma' `key` və '
 # Python-da funksiyalar nədir?
 Funksiyalar sadəcə çağrıldığı zaman işləyən kod bloklarıdır. Funksiyalar proqramımızı daha kiçik və modul hissələrə ayırmağa kömək edir. Proqramımız getdikcə böyüdükcə, funksiyalar onu daha mütəşəkkil və idarəolunan edir. Pythonda funksiya olaraq adlandırılan proses digər programlaşdırma dillərinin bəzilərində “rutin” və ya “prosedur” olaraq adlandırılır. Həqiqətəndə funksiyalar rutin olaraq təkrarlanan tapşırıqları tək bir ad altında birləşdirir və bizi gərəksiz təkrardan qurtardığı kimi ən önəmlisi vaxt itkisinin qarşısını almış olur. Pythonu öyrənməyə ilk başladığımızda funksiyayla artıq tanış olmuş oluruq, `print()` özü bir funksiyadır və biz ondan heçbir kod yazmadan rahatlıqla istifadə edə bilirik.
 
-# Python-də init nədir?
+# Python-da init nədir?
 Python siniflərində qorunan init metodu obyekt yönümlü proqramlaşdırma (OOP) terminologiyasındakı konstruktorlar kimi eyni məqsədə xidmət edir. Yeni obyekt yaradıldıqda init metodu avtomatik çağırılır, obyekti işə salır və onun üçün yaddaş ayırır. Bu üsul həm də dəyişənlər üçün ilkin dəyərləri təyin etmək üçün istifadə edilə bilər. İnit metodunun içində sinifin daxili dəyişənlərini təyin edə bilərsiniz. İnit metodunun birinci parametri "self"dir, bu, metodun özünə bir referansdır və sinifdəki digər metodlarda olduğu kimi istifadə olunur. Aşağıdakı sintaksis ilə tətbiq olunur:
 
 ```python
@@ -250,7 +248,7 @@ class SinifAdi:
         self.parametr1 = parametr1
         self.parametr2 = parametr2
 ```
-# Python-də yayğın olaraq istifadə olunan built-in data types nələrdir?
+# Python-da yayğın olaraq istifadə olunan built-in data types nələrdir?
 Python-də bir sıra built-in verilən tipləri mövcuddur. Bəzi əsas built-in verilən tiplər aşağıdakılardır:
 
 1. Integer: Tam ədədi ifadə etmək üçün istifadə olunan verilən tipidir. Misal üçün: `x = 5`
@@ -263,3 +261,58 @@ Python-də bir sıra built-in verilən tipləri mövcuddur. Bəzi əsas built-in
 8. Set: Birləşik verilənləri toplamaq üçün istifadə olunan verilən tipidir. Təkrarlanan dəyərlərə imkan vermir və sırasızdır. Misal üçün: `fruits = {"apple", "banana", "orange"}`
 
 Bu yalnız bir neçə builtin verilən tipidir və Python-da daha çox verilən tipi mövcuddur. Hər bir verilən tipi özünəməxsus xüsusiyyətlərə və əməliyyatlara malikdir və proqramçıya çeşit
+
+# Python-da type conversion nədir?
+Python-da tip çevirməsi (type conversion) bir verilən tipindən başqa bir verilən tipinə dəyişmək deməkdir. Python çox təhlükəsiz bir dildir və mümkün olduğu qədər avtomatik tip çevirmələrini etməyə çalışır. Ancaq zaman zaman proqramçının açıq şəkildə tip çevirməsinə ehtiyacı ola bilər.
+
+Python-da tip çevirməsi üçün aşağıdakı funksiyalar və metodlar istifadə edilir:
+
+1. `int()`: Integer tipinə çevirmək üçün istifadə olunur. Məsələn: `x = int(3.14)`.
+2. `float()`: Float tipinə çevirmək üçün istifadə olunur. Məsələn: `y = float(5)`.
+3. `str()`: String sətiri tipinə çevirmək üçün istifadə olunur. Məsələn: `name = str(42)`.
+4. `list()`: List tipinə çevirmək üçün istifadə olunur. Məsələn: `numbers = list((1, 2, 3, 4, 5))`.
+5. `tuple()`: Tuple tipinə çevirmək üçün istifadə olunur. Məsələn: `point = tuple([3, 5])`.
+6. `dict()`: Dictionary tipinə çevirmək üçün istifadə olunur. Məsələn: `person = dict(name="John", age=30)`.
+7. `set()`: Set tipinə çevirmək üçün istifadə olunur. Məsələn: `fruits = set(["apple", "banana", "orange"])`.
+8. `ord()`: Bu funksiya Unicode simvolunu təmsil edən tam ədədi qaytarır.
+9. `hex()`: Bu funksiya tam ədədi onaltılıq ədədə çevirir.
+10. `oct()`: Bu funksiya tam ədədləri səkkizlik sətirlərə çevirir.
+11. `bin()`: Bu funksiya tam ədədləri ikili ədədə çevirir.
+12. `chr()`: Bu funksiya tam ədədi Unicode simvoluna çevirir.
+13. `bool()`: Bu funksiya dəyişəni boolean tipinə çevirir.
+
+Bu funksiyalar və metodlar ilə Python-da fərqli verilən tiplər arasında asanlıqla tip çevirmələri həyata keçirilə bilir. Ancaq tip çevirməsini edərkən verilən tiplər arasında uyğunsuzluq mövcud ola bilər və bu, səhvə səbəb olacaqsa, bu prosesi nəzarət altında saxlamağınız tövsiyə olunur.
+
+# Windows üzərində Pythonun quraşdırılması və sistem yolu dəyişənin təyini necə edilir?
+Windows əməliyyat sistemində Pythonun quraşdırılması və sistem yolu dəyişənin təyini aşağıdakı addımlarla edilir:
+1. Pythonun son rəsmi saytından istədiyiniz Python versiyasını yükləyin. Yükləmə səhifəsində, Windows üçün uyğun olan yükləyici faylı seçin və yükləmə prosesini başladın. İndi sizin Python proqramınızın yükləndiyini düşünürək növbəti addıma keçək.
+2. Quraşdırıcıyı başladın və tələbat olunan konfiqurasiyaları seçin. Əksərən dəfələrlə tələb edən "Add Python to PATH" seçimini qeyd edin. Bu, Pythonun sistem yoluna avtomatik olaraq əlavə edilməsinə kömək edəcəkdir.
+3. Quraşdırıcının geri qalan addımlarını izləyin və Pythonu müəyyən bir qovluğa (məsələn, C:\Python) quraşdırın. Bütün standart konfiqurasiyaları seçin və quraşdırma prosesini bitirin.
+4. Sistem yolu dəyişənin təyini üçün aşağıdakı addımları izləyin:
+
+   a. Başlat düyməsini vurun və "Sistem"i axtarın. "Sistem məlumatı" qalereyasını açın və "Sistem məlumatı" pəncərəsini açın.
+   b. Sol tərəfdən "Gelişmiş sistem parametrləri"ni seçin. İndiyədək idarəetmə təqvimi ilə əlaqəli məlumatları düzəltmə icazəsi verə bilərsiniz.
+   c. "Mülkiyyət" adlı pəncərədə, "Ortam dəyişənləri" düyməsini seçin.
+   d. İstifadəçi dəyişənləri bölməsində "Yeni" düyməsini seçin və aşağıdakı dəyişəni daxil edin:
+   
+      - Ad: PATH
+      - Dəyər: Pythonun quraşdırıldığı qovluğun tam yolu (məsələn, C:\Python)
+   
+   e. İstifadəçi dəyişənləri bölməsindən "OK" düyməsinə basın və bütün pəncərələri bağlayın.
+   
+5. Artıq Pythonun quraşdırılması və sistem yolu dəyişdirilib və Python Windows üzərində düzgün işləyir. Bu zaman Pythonu istədiyiniz konsol və ya terminallarda çağıraraq işlədə bilərsiniz.
+
+Pythonu çağırmaq üçün aşağıdakı addımları izləyin:
+
+1. Başlat düyməsini vurun və `Command Prompt`-u axtarın.
+2. `Command Prompt`-u açın və Python skriptlərini icra etmək istədiyiniz qovluğa keçin.
+3. Pythonu çağırmaq üçün aşağıdakı sintaksisi daxil edin:
+
+   ```bash
+   python
+   ```
+   Bu, standart Python interpreterini açacaq və siz Python kodunu daxil edə biləcəksiniz.
+
+4. Python interpreterini bağlamaq üçün `exit()` funksiyasını daxil edin və "Enter" düyməsini basın.
+
+Artıq Pythonun quraşdırılması və sistem yolu dəyişdirilməsi tamamlandı. Pythonu istədiyiniz konsolda çağıraraq kodları icra edə, skriptləri işlədə və Python ilə çalışa bilərsiniz.
