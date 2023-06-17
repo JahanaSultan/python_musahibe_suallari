@@ -116,6 +116,7 @@ Bu repozitoriyada Python ilə bağlı müsahibə sual-cavabları toplanılır. S
 101. [Quick sort alqoritmini yerinə yetirmək üçün Python-da proqram yazın](#quick-sort-alqoritmini-yerinə-yetirmək-üçün-python-da-proqram-yazın)
 102. [Timsort alqoritmini yerinə yetirmək üçün Python-da proqram yazın](#timsort-alqoritmini-yerinə-yetirmək-üçün-python-da-proqram-yazın)
 103. [Python-da bir sətri tərsinə çevirmək üçün proqram yazın](#python-da-bir-sətri-tərsinə-çevirmək-üçün-proqram-yazın)
+104. [print() funksiyasının parametrləri nələrdir?](#print-funksiyasının-parametrləri-nələrdir)
 
 
 # Python nədir?
@@ -144,11 +145,72 @@ Python çox üstünlüklərə malik olsa da, bir neçə dezavantaja da sahibdir.
 - Verilənlər bazasına giriş üçün optimallaşdırılmayıb: Python, bəzi digər dillərdən fərqli olaraq, verilənlər bazaları ilə işləmək üçün güclü, yüksək keyfiyyətli və istifadəsi asan bir interfeysə malik deyildir. 
 - Multithreading Dəstəyi yoxdur: Arxitekturasına görə Python çox iş parçacığını dəstəkləmir.
 
+# Pythonun istifadə sahələri
+Python, çox tərəfli bir dildir. Pythonun istifadə sahələri:
+- Web proqramlaşdırma: Python, web proqramlaşdırma üçün istifadə edilən ən populyar dillərdən biridir. Django, Flask, Pylons, Pyramid və CherryPy kimi bir çox Python framework-ları mövcuddur. Bu framework-lar, web proqramlaşdırma üçün istifadə edilən bir çox digər dillərdən daha sürətli və effektivdir.
+- Data analitikası: Python, data analitikası üçün istifadə edilən ən populyar dillərdən biridir. Pandas, NumPy, SciPy və Scikit-Learn kimi bir çox Python kitabxanası mövcuddur. Bu kitabxanalar, data analitikası üçün istifadə edilən bir çox digər dillərdən daha sürətli və effektivdir.
+- Süni intellekt: Python, süni intellekt üçün istifadə edilən ən populyar dillərdən biridir. TensorFlow, Keras, PyTorch və Theano kimi bir çox Python kitabxanası mövcuddur. Bu kitabxanalar, süni intellekt üçün istifadə edilən bir çox digər dillərdən daha sürətli və effektivdir.
+- Oyun proqramlaşdırma: Python, oyun proqramlaşdırma üçün istifadə edilən ən populyar dillərdən biridir. PyGame, PyKyra, PySoy və Panda3D kimi bir çox Python framework-ları mövcuddur. Bu framework-lar, oyun proqramlaşdırma üçün istifadə edilən bir çox digər dillərdən daha sürətli və effektivdir.
+- Avtomatlaşdırma: Python, avtomatlaşdırma üçün istifadə edilən ən populyar dillərdən biridir. Ansible, Salt, OpenStack, OpenCV və Boto kimi bir çox Python framework-ları mövcuddur. Bu framework-lar, avtomatlaşdırma üçün istifadə edilən bir çox digər dillərdən daha sürətli və effektivdir.
+- Finans: Python, finans üçün istifadə edilən ən populyar dillərdən biridir. Zipline, PyAlgoTrade, Pybacktest və Pyfolio kimi bir çox Python framework-ları mövcuddur. Bu framework-lar, finans üçün istifadə edilən bir çox digər dillərdən daha sürətli və effektivdir.
 
+# Listləri tuple-lardan ayıran nədir?
+- Listlər dəyişdirilə bilən, tuple-lar dəyişdirilə bilməz.
+- Listlər, tuple-lardan daha çox yaddaş istifadə edir.
+- Listlər, tuple-lardan daha yavaş işləyir.
+- Listlər, tuple-lardan daha çox funksiyaya malikdir.
+- Siyahıların gözlənilməz dəyişikliklərlə üzləşmə ehtimalı daha yüksəkdir, bu da onları səhvlər baxımından daha az etibarlı edir. Tuples gözlənilməz dəyişikliklərə qarşı müqaviməti sayəsində artan etibarlılıq təklif edir.
 
+# pep8 nədir?
+Python-da PEP, Python Enhancement Proposal deməkdir. O, maksimum aydınlıq və oxunaqlılığı təmin etmək üçün Python kodunun hazırlanması və strukturlaşdırılması üçün optimal yanaşmanı əks etdirən təlimatlar toplusundan ibarətdir.
+PEP 8, Python dilində kod yazarkən daha düzgün tərtibatlanmış və oxunaqlı kodlar üçün bir qayda kitabçası kimi düşünülə bilər.
 
+# Python-un əsas xüsusiyyətləri nələrdir?
 
+# Python-da yaddaş necə idarə olunur?
+- Yaddaşın ayrılması: Bir Python proqramı başladıqda, yaddaşda programın dəyişənləri, obyektləri və digər məlumatları saxlamaq üçün lazım olan yer ayrılır. Bu prosesə yaddaşın ayrılması deyilir.
+- Yaddaşın istifadəsi: Proqram işləndikcə, dəyişənlər, obyektlər və digər məlumatlar yaddaşda saxlanır və istifadə olunur. Python, yaddaşın avtomatik idarə edilməsini təmin edir, yəni proqramçının bu prosesi idarə etməsinə ehtiyac yoxdur. Python yaddaş idarə etmək üçün bir məkan toplama (garbage collection) mexanizması istifadə edir.
+- Garbage Collection (Məkan Toplama): Python, artıq istifadə edilməyən məlumatların təyin olunan yaddaşdan silinməsi üçün avtomatik kəşikləmə (garbage collection) mekanizmasını tətbiq edir. Bu proses, artıq referanslı olmayan obyektləri təyin edilən yaddaşdan təmizləyir və bu yolla yaddaşın daha effektiv istifadəsini təmin edir. Python'un garbage collection mexanizması referans sayma ilə işləyir. Obyektlərə referans olduğu müddətdə yaddaşda qalır və referans sayısı sıfıra çatdıqda silinir.
 
+Python ayrıca yaddaşın effektiv idarə edilməsi üçün bazı yaddaş optimizasiya strategiyalarına da malikdir. Bunlar arasında referans sayma, obyektlərin dəyişdirilməz olması (immutable) və yaddaşın daha verimli istifadəsi üçün verilənlər tipi optimizasiyası kimi məsələlər yer alır.
 
+# PYTHONPATH nədir?
+PYTHONPATH, Python tərəfindən modulların axtarılması üçün istifadə olunan bir mühit dəyişənidir. PYTHONPATH dəyişəni, Python modullarının yerləşdiyi qovluqları təyin edir. 
 
+# Python modulları nələrdir?
+Python modulları, bir proqramda təkrar istifadə oluna bilən funksiyalar, dəyişənlər və obyektlər kimi mənbələrdən ibarət fayllardır. Modullar Python kodunun təşkil edilən və yenidən istifadə edilə bilən hissələridir.
 
+Python modulları aşağıdakı hallarda istifadə oluna bilər:
+
+- Standart Kitabxanalar: Python, dilin özü ilə birlikdə gələn bir çox standart modul təklif edir. Bu modullar, müxtəlif funksiyonallığı əhatə edir və misal üçün math, datetime, random, os, sys kimi modulları içərir. Bu modulları import edərək hazır funksiyalardan və prosedurlardan istifadə edə bilərsiniz.
+- Üçüncü Tərəf Kitabxanalar: Python-da bir çox üçüncü tərəf modul mövcuddur. Bu modullar, Python cəmiyyəti tərəfindən hazırlanan və Python ilə birlikdə istifadə edilən modullardır. Misal üçün, NumPy, Pandas, Matplotlib, Django, Flask, requests kimi kitabxanalar geniş funksionallıq təklif edir və çeşidlənmək istəyən proqramlar üçün güclü alətlər təmin edir.
+- Xüsusi Modullar: Xüsusi modullar, proqramçının təyin etdiyi və öz təşkilatına uyğun olan modullardır. Bu modullar proqramın öz tələblərinə cavab verən xüsusi funksiyonallığı təmin edir. Bu modulları öz proqramınıza əlavə edərək xüsusi funksiyalar və prosedurlar əlavə edə bilərsiniz.
+
+Modullar Python-da kodun daha modullu və təşkilatlandırılmış olmasını təmin edir. Onlar kodun bənzərsiz funksiyonal komponentlərə ayrılmasına imkan verir və yenidən istifadə olunan kod tərəfindən təmin edilən funksiyaları təşkil edir. Bu, kodun oxunması, yaxşılaşdırılması və yeniden istifadəsi üçün daha yaxşı bir struktur və təşkilat qurulmasını təmin edir.
+
+# Python namespaces nələrdir?
+Python namespaces (ad sahələri), sadə deyişlə adların qruplarıdır. Hər bir ad sahəsi, Python proqramında adların xüsusiyyətlərinin saxlandığı və məlumatlara çatmağa imkan verdiyi bir məkanı təmsil edir. Python-da üç fərqli növ ad sahələri mövcuddur:
+1. Global Ad Sahəsi: Global ad sahəsi, bir Python skriptinin daxilində, yəni bütün modulda əldə edilən adlara görünürlük təmin edir. Global adlar, skriptin istifadə etdiyi modullardan daxil olunan funksiyalar və siniflər arasında görünə bilər. Həmçinin, global adlar, bir moduldan başqa bir modula import edilən adlar kimi də əldə edilə bilər.
+2. Yerli Ad Sahəsi: Yerli ad sahəsi, bir funksiyanın daxilində tanımlanan adlara görünürlük təmin edir. Yerli adlar, yalnız funksiya tərəfindən əldə edilə bilər və digər funksiyalar tərəfindən gizli qalır. Yerli ad sahəsi, hər bir funksiya tətbiqində müstəqil olaraq yaradılır və funksiyanın icrası zamanı aktivdir.
+3. Enclosing Ad Sahəsi: Enclosing ad sahəsi, bir iç funksiyanın daxilində tanımlanan adlara görünürlük təmin edir. Bu ad sahəsi, iç funksiyaların daxilində yerləşən funksiya tərəfindən təyin olunur. İç funksiya, əvvəlki funksiyanın daxilindəki adlara çatmağa imkan verir və bu sayədə hər bir iç funksiya öz "qabaqcadan" yerli ad sahəsini əldə edir.
+
+Ad sahələri, adların mövcudluğunu və görünürlüyünü tənzimləyir. Onlar ad konfliktlərini önləyir və adlara düzgün bir şəkildə çatmağa imkan verir.
+
+# Python-da miras alma nədir?
+Python-da miras alma, obyektləri bir-birindən təşkil etmək üçün istifadə olunan bir obyekt mühərrikləşdirmə məntiqidir. Miras alma, mövcud obyektlərin funksialarını və xüsusiyyətlərini yeni obyektlərə və ya siniflərə ötürmək üçün istifadə olunur.
+
+Python-da miras alma prosesi, bir "üst sinif" və bir "alt sinif" arasında gerçəkləşir. Üst sinifdəki xüsusiyyətlər və metodlar alt sinifdə də ötürülərək alt sinifin onları istifadə etməsinə imkan verir. Bu "alt sinifin üst sinifi miras alması" adlanır. Miras alma prosesi, alt sinifin üst sinifin bütün funksialarını əldə etməsini və buna əlavə funksialar əlavə etməsini təmin edir.
+
+Python-da miras alma prosesi aşağıdakı sintaksis ilə tətbiq olunur:
+
+```python
+class UstSinif:
+    # Ust sinifin xususiyyetleri ve metodlari
+
+class AltSinif(UstSinif):
+    # Alt sinifin xususiyyetleri ve metodlari
+```
+
+Burada `AltSinif`, `UstSinif`-dən miras alır. `AltSinif`, `UstSinif`-ın xüsusiyyətlərini və metodlarını əldə edir və onlara əlavə funksialar əlavə edə bilər.
+
+Miras alma, kodun yeniden istifadəsini və təşkilatını təmin edir. Üst siniflərdən miras alan alt siniflər, üst sinifdə mövcud olan funksianı təkrar yazmağa ehtiyac duymadan onu istifadə edə bilir. Bu, kodun daha oxunaqlı, düzgün və genişlənən bir struktura malik olmasını təmin edir. Həmçinin, miras alma, obyek yönümlü proqramlaşdırma paradigmalarında polimorfizm və yüklənmiş metodların tətbiqini dəstəkləyir.
