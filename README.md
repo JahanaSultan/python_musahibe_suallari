@@ -368,3 +368,17 @@ salam()
 # output: Sonra funksiya işləyir.
 ```
 
+# Python-da sıralama məcburidir (indentation required)?
+Bəli, Python-da sıralama məcburidir. Python-da sıralama kod bloklarını təyin etmək üçün istifadə olunur. Python-da kod blokları ifadələrin (statements) bir qrupudur ki, onlar birlikdə icra olunur. Məsələn, `if`, `for`, `while` və ya funksiya təyin etmək üçün kod blokları lazımdır. Python-da kod bloklarını təyin etmək üçün müxtəlif sıra sayıları (indentation levels) istifadə olunur. Sıra sayıları boşluq və ya tab simvollarından ibarət ola bilər. Sıra sayılarının sayı və növü kod bloklarının başlanğıcında və sonunda eyni olmalıdır. Əks halda Python SyntaxError verir. Məsələn:
+```python
+def func():
+    print("Hello")
+    print("World")
+```
+Bu funksiya düzgün yazılıb və iki sıra boşluq ilə sıralanıb. Lakin bu funksiya:
+```python
+def func():
+    print("Hello")
+        print("World")
+```
+Sintaksis səhvi verir, çünki ikinci print ifadəsi ilkin sıra sayısından fərqlidir.
