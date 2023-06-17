@@ -552,3 +552,23 @@ Bu misalda `iter()` funksiyası ilə `my_list` siyahısının bir iterator obyek
 
 Iterasiya, bir verilən üzərində elementlər üzrə dövr etmək, məlumatları lazımi zamanda lazımi məqsədlər üçün istifadə etmək və həmçinin Python-da bir çox proqramlama paradigması üçün əsas bir vaciblik kəsb edir.
 
+# Python-dakı "yield" ifadəsi nədir?
+`yield` ifadəsi, funksiya daxilində dəyər yaradan bir nöqtəyə qədər işləyir və məlumatı geri qaytarır. Dövrü dayandırmaq və ya funksiyanın bitməsini tələb etmək üçün `return` ifadəsindən fərqli olaraq `yield` ifadəsi istifadə olunur.
+
+Hər `yield` ifadəsindən sonra, funksiyanın daxilindəki vəziyyət xatırlanır və növbəti dəfə `yield` ifadəsinə qədər davam edilir. Bu, funksiyanın məlumatı ardıcıllıq üzrə progressiv olaraq tələb etmək və işləmək üçün iterator funksiyası kimi davranmasına imkan verir.
+
+İstifadə nümunəsi aşağıdakı kimi görünə bilər:
+```python
+def my_generator():
+    yield 1
+    yield 2
+    yield 3
+
+gen = my_generator()
+print(next(gen))  # Output: 1
+print(next(gen))  # Output: 2
+print(next(gen))  # Output: 3
+```
+Bu nümunədə, `my_generator` adlı bir generator funksiyası yaradılır. İlk `yield` ifadəsi ilə funksiya 1 dəyərini qaytarır və dayanır. Sonra növbəti "next()" çağırışında funksiya, sonrakı `yield` ifadəsinə kimi davam edir və dəyərləri ardıcıllıq üzrə qaytarır.
+
+`yield` ifadəsi, generatorlar vasitəsilə böyük verilənlərlə çalışmağa imkan verir və yaddaşda saxlama məsələlərini minimallaşdırır. Generatorlar, döngülər, iterasiya verilənləri və lazımi məlumatı progressiv olaraq tələb etmək üçün çox faydalı bir alətdir.
