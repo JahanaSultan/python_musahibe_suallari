@@ -3,7 +3,7 @@
 Bu repozitoriyada Python ilə bağlı müsahibə sual-cavabları toplanılır. Siz də bu repozitoriyaya əlavələr edə bilərsiniz. Əlavələriniz üçün pull request göndərə bilərsiniz.
 
 ### İçindəkilər
-
+---------------------
 ### Basic Python müsahibə sualları
 
 1. [Python nədir?](#python-nədir)
@@ -88,7 +88,7 @@ Bu repozitoriyada Python ilə bağlı müsahibə sual-cavabları toplanılır. S
 ### Advanced Python Müsahibə Sualları
 
 75. [Python-da lambda funksiyası nədir?](#python-da-lambda-funksiyası-nədir)
-76. [Python-da self nədir?](#python-da-self-nədir)
+<!-- 76. [Python-da self nədir?](#python-da-self-nədir) -->
 77. [append() və extend() metodları arasındakı fərq nədir?](#append-və-extend-metodları-arasındakı-fərq-nədir)
 78. [Python Flask verilənlər bazası sorğularını necə idarə edir?](#python-flask-verilənlər-bazası-sorğularını-necə-idarə-edir)
 79. [Python-da docstring nədir?](#python-da-docstring-nədir)
