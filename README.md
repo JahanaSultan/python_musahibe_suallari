@@ -118,7 +118,7 @@ Bu repozitoriyada Python ilə bağlı müsahibə sual-cavabları toplanılır. S
 103. [Python-da bir sətri tərsinə çevirmək üçün proqram yazın](#python-da-bir-sətri-tərsinə-çevirmək-üçün-proqram-yazın)
 
 
-1.(#python-nədir) Python nədir?
+1. #Python nədir?
 -------------
 Python proqramlaşdırma dili Guido van Rossum tərəfindən yaradılmışdır və 1991-ci ildən bəri inkişaf etdirilir. Pythonun əsas fərqi sadə sintaksisdən ibarətdir və bu da onu proqramlaşdırma dilləri arasında ən asan öyrənilən dil edir.
 
