@@ -13,7 +13,7 @@ Bu repozitoriyada Python ilə bağlı müsahibə sual-cavabları toplanılır. S
 5. [Pythonun istifadə sahələri](#pythonun-istifadə-sahələri)
 6. [Listləri tuple-lardan ayıran nədir?](#listləri-tuple-lardan-ayıran-nədir)
 7. [pep8 nədir?](#pep8-nədir)
-<!-- 8. [Python-un əsas xüsusiyyətləri nələrdir?](#python-un-əsas-xüsusiyyətləri-nələrdir) -->
+8. [Python-da "==" və "is" operatorları arasındakı fərq nədir?](#python-da--və-is-operatorları-arasındakı-fərq-nədir)
 9. [Python-da yaddaş necə idarə olunur?](#python-da-yaddaş-necə-idarə-olunur)
 10. [PYTHONPATH nədir?](#pythonpath-nədir)
 11. [Python modulları nələrdir?](#python-modulları-nələrdir)
@@ -164,6 +164,30 @@ Python, çox tərəfli bir dildir. Pythonun istifadə sahələri:
 # pep8 nədir?
 Python-da PEP, Python Enhancement Proposal deməkdir. O, maksimum aydınlıq və oxunaqlılığı təmin etmək üçün Python kodunun hazırlanması və strukturlaşdırılması üçün optimal yanaşmanı əks etdirən təlimatlar toplusundan ibarətdir.
 PEP 8, Python dilində kod yazarkən daha düzgün tərtibatlanmış və oxunaqlı kodlar üçün bir qayda kitabçası kimi düşünülə bilər.
+
+# Python-da "==" və "is" operatorları arasındakı fərq nədir?
+Python-da `==` və `is` operatorları arasındakı fərq onlardan birinin bərabərlik (equality) yoxlamaq, digərinin isə kimlik (identity) yoxlamaq üçün istifadə olunmasıdır. `==` operatoru iki dəyişkənin dəyərlərinin bərabər olub-olmadığını yoxlayır. "is" operatoru isə iki dəyişkənin eyni obyektə işarə edib-etmədiyini yoxlayır. Məsələn:
+```python
+x = [1, 2, 3]
+y = [1, 2, 3]
+
+print(x == y) # True
+print(x is y) # False
+```
+Bu kodda x və y dəyişkənləri eyni dəyərli siyahılara işarə edirlər, buna görǝ dǝ `==` operatoru `True` qaytarır. Lakin x və y fǝrqli obyektlrdir və ya fǝrqli yaddaş ünvanlarına işarǝ edirlər, buna görǝ dǝ `is` operatoru `False` qaytarır. Bunu `id()` funksiyası ilǝ tǝsdiqlǝmǝk mümkündür:
+```python
+print(id(x)) # 140476144562688
+print(id(y)) # 140476144562944
+```
+Bu kodda x vǝ y-nin fǝrqli id-ləri olduğunu görürük. `id()` funksiyası obyektin yaddaş ünvanını qaytarır. Python-da hǝr obyektin unikal və sabit bir id-si var. `is` operatoru əslinda iki obyektin id-lərinin bǝrabǝr olub-olmadığını yoxlayır.
+
+Buna görǝ, Python-da bǝrabǝrlik v kimlik arasında böyük fǝrq var. Bütün halarda `==` operatorunu istifadə etmǝk lazımdır, xüsusi hallarda isə `is` və ya `is not` operatorlarını istifadə etmǝk lazımdır. Bu xüsusi hallardan biri `None` ilǝ müqayisə  etmǝkdir. `None` ilǝ müqayisə etmǝk üçün həmişə `is` və ya `is not` istifadə etmǝk lazımdır. Məsələn:
+```python
+x = None
+if x is None:
+    print("x is None")
+```
+Bu kodda x dövrünün `None` olub-olmadığını yoxlayır. Bu halda `==` istifad etmǝk səhv olar.
 
 # Python-da yaddaş necə idarə olunur?
 - Yaddaşın ayrılması: Bir Python proqramı başladıqda, yaddaşda programın dəyişənləri, obyektləri və digər məlumatları saxlamaq üçün lazım olan yer ayrılır. Bu prosesə yaddaşın ayrılması deyilir.
@@ -407,3 +431,5 @@ for i in range(10):
     pass # boş dövr
 ```
 Bu kod heç bir şey çap etmir, çünki dövrün içində `pass` ifadəsindən başqa heç bir şey yoxdur. pass ifadəsi funksiyaları, sinifləri və ya şərt bloklarını da boş saxlamaq üçün istifadə oluna bilər.
+
+# 
