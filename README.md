@@ -432,4 +432,24 @@ for i in range(10):
 ```
 Bu kod heç bir şey çap etmir, çünki dövrün içində `pass` ifadəsindən başqa heç bir şey yoxdur. pass ifadəsi funksiyaları, sinifləri və ya şərt bloklarını da boş saxlamaq üçün istifadə oluna bilər.
 
-# 
+# Python-da bir siyahının elementlərini yerində təsadüfi şəkildə necə qarışdıra bilərəm?
+Python-da bir siyahının elementlərini yerində təsadüfi şəkildə qarışdırmaq üçün `random` modulundan istifadə edə bilərsiniz. Bu modulun `shuffle()` funksiyası siyahının elementlərini yerində təsadüfi şəkildə qarışdırır. Məsələn:
+```python
+import random
+
+numbers = [1, 2, 3, 4, 5]
+
+random.shuffle(numbers)
+
+print(numbers)
+
+# output: [3, 1, 5, 4, 2]
+```
+
+# Python-da çox sətirli şəkildə necə şərh yazmaq olar?
+Python-da çox sətirli şəkildə şərh yazmaq üçün `"""` və ya `'''` işarələrindən istifadə edə bilərsiniz. Məsələn:
+```python
+""" Bu bir çox sətirli şərhdir. """
+```
+
+# Python dili nə cür bir dil sayılır - proqramlaşdırma dili və ya skript dilidir?
