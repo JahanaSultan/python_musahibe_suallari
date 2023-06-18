@@ -1105,7 +1105,7 @@ print(my_list1)  # Output: [1, 2, 3, 4, 5, 6, 7, 8]
 Flask, verilənlər bazası sorğularını idarə etmək üçün SQLAlchemy kitabxanasından istifadə edir. SQLAlchemy, Python dilində verilənlər bazası ilə işləmək üçün istifadə olunan ən populyar kitabxanalardan biridir. SQLAlchemy, verilənlər bazası sorğularını idarə etmək üçün ORM (Object Relational Mapper) tətbiq edir. ORM, verilənlər bazası ilə obyekt-əlaqəli proqramlaşdırma (Object-Relational Programming) üçün istifadə olunan bir proqramlaşdırma tərzidir. ORM vasitəsilə, verilənlər bazası ilə işləmək üçün SQL sorğuları yazmaq yerinə Python obyektləri ilə işləmək olur. 
 
 # Python-da docstring nədir?
-Python-da docstring, bir funksiya, metod və ya sinifin üstündəki stringdən ibarət olan bir stringdir. Docstring, funksiya, metod və ya sinifin təsviri kimi istifadə olunur. Docstring, funksiya, metod və ya sinifin üstündəki stringdən ibarət olan bir stringdir. Docstring, funksiya, metod və ya sinifin təsviri kimi istifadə olunur. 
+Python-da docstring, bir funksiya, metod və ya sinifin üstündəki stringdən ibarət olan bir stringdir. Docstring, funksiya, metod və ya sinifin təsviri kimi istifadə olunur. 
 
 # Python-da multi-threading-in məhdudiyyətləri nələrdir?
 Python-da multi-threading-in ən böyük məhdudiyyəti Python Global İnterpreter Kilidi (GIL) adlanan bir mekanizmadır. GIL, Python tərcüməçisinin eyni anda yalnız bir thread-i icra etməsinə imkan verir. Bu o deməkdir ki, multi-threading ilə CPU-yüklü işləri paralel icra etmək mümkün deyil. GIL-dən qaçmaq üçün multiprocessing modulundan istifadə etmək lazımdır.
