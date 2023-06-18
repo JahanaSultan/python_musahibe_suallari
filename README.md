@@ -1354,7 +1354,180 @@ print(prime_number(9))  # Output: False
 print(prime_number(11))  # Output: True
 ```
 
-    
+# Pythonda simvolun ASCII dəyərini çap etmək üçün proqram yazın
+```python
+c = 'p'
+print("The ASCII value of '" + c + "' is", ord(c))
+
+# Output: The ASCII value of 'p' is 112
+```
+
+# Insertion sort alqoritmini yerinə yetirmək üçün Python-da proqram yazın
+```python
+def insertion_sort(nums):
+    for i in range(1, len(nums)):
+        item_to_insert = nums[i]
+        j = i - 1
+        while j >= 0 and nums[j] > item_to_insert:
+            nums[j + 1] = nums[j]
+            j -= 1
+        nums[j + 1] = item_to_insert
+
+random_list_of_nums = [9, 1, 15, 28, 6]
+insertion_sort(random_list_of_nums)
+print(random_list_of_nums)  # Output: [1, 6, 9, 15, 28]
+```
+
+# Merge sort alqoritmini yerinə yetirmək üçün Python-da proqram yazın
+```python
+def merge_sort(nums):
+    if len(nums) > 1:
+        mid = len(nums) // 2
+        left = nums[:mid]
+        right = nums[mid:]
+
+        merge_sort(left)
+        merge_sort(right)
+
+        i = 0
+        j = 0
+        k = 0
+
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                nums[k] = left[i]
+                i += 1
+            else:
+                nums[k] = right[j]
+                j += 1
+            k += 1
+
+        while i < len(left):
+            nums[k] = left[i]
+            i += 1
+            k += 1
+
+        while j < len(right):
+            nums[k] = right[j]
+            j += 1
+            k += 1
+
+random_list_of_nums = [120, 45, 68, 250, 176]
+merge_sort(random_list_of_nums)
+print(random_list_of_nums)  # Output: [45, 68, 120, 176, 250]
+```
+
+# Quick sort alqoritmini yerinə yetirmək üçün Python-da proqram yazın
+```python
+def partition(nums, low, high):
+    pivot = nums[(low + high) // 2]
+    i = low - 1
+    j = high + 1
+    while True:
+        i += 1
+        while nums[i] < pivot:
+            i += 1
+
+        j -= 1
+        while nums[j] > pivot:
+            j -= 1
+
+        if i >= j:
+            return j
+
+        nums[i], nums[j] = nums[j], nums[i]
+
+def quick_sort(nums):
+    def _quick_sort(items, low, high):
+        if low < high:
+            split_index = partition(items, low, high)
+            _quick_sort(items, low, split_index)
+            _quick_sort(items, split_index + 1, high)
+
+    _quick_sort(nums, 0, len(nums) - 1)
+
+random_list_of_nums = [22, 5, 1, 18, 99]
+quick_sort(random_list_of_nums)
+print(random_list_of_nums)  # Output: [1, 5, 18, 22, 99]
+```
+
+# Timsort alqoritmini yerinə yetirmək üçün Python-da proqram yazın
+```python
+def insertion_sort(nums):
+    for i in range(1, len(nums)):
+        item_to_insert = nums[i]
+        j = i - 1
+        while j >= 0 and nums[j] > item_to_insert:
+            nums[j + 1] = nums[j]
+            j -= 1
+        nums[j + 1] = item_to_insert
+
+def merge(left_list, right_list):
+    sorted_list = []
+    left_list_index = right_list_index = 0
+
+    left_list_length, right_list_length = len(left_list), len(right_list)
+
+    for _ in range(left_list_length + right_list_length):
+        if left_list_index < left_list_length and right_list_index < right_list_length:
+            if left_list[left_list_index] <= right_list[right_list_index]:
+                sorted_list.append(left_list[left_list_index])
+                left_list_index += 1
+            else:
+                sorted_list.append(right_list[right_list_index])
+                right_list_index += 1
+
+        elif left_list_index == left_list_length:
+            sorted_list.append(right_list[right_list_index])
+            right_list_index += 1
+
+        elif right_list_index == right_list_length:
+            sorted_list.append(left_list[left_list_index])
+            left_list_index += 1
+
+    return sorted_list
+
+def tim_sort(nums):
+    min_run = 32
+    n = len(nums)
+
+    for i in range(0, n, min_run):
+        insertion_sort(nums[i:i + min_run])
+
+    size = min_run
+    while size < n:
+        for start in range(0, n, size * 2):
+            midpoint = start + size - 1
+            end = min((start + size * 2 - 1), (n - 1))
+
+            merged_list = merge(left_list=nums[start:midpoint + 1], right_list=nums[midpoint + 1:end + 1])
+
+            nums[start:start + len(merged_list)] = merged_list
+
+        size *= 2
+
+random_list_of_nums = [120, 45, 68, 250, 176]
+
+tim_sort(random_list_of_nums)
+
+print(random_list_of_nums)  # Output: [45, 68, 120, 176, 250]
+```
+
+# Python-da bir sətri tərsinə çevirmək üçün proqram yazın
+```python
+def reverse_string(s):
+    return s[::-1]
+
+print(reverse_string("Hello"))  # Output: olleH
+```
+
+# print() funksiyasının parametrləri nələrdir?
+print() funksiyasının parametrləri arasında `sep`, `end`, `file`, `flush` və `var` sayıla bilər.
+- `sep` parametri, print() funksiyasının parametrləri arasında ayrılmış verilənləri ayırmaq üçün istifadə olunur. Məsələn: `print("Hello", "World", sep=" ")` Bu kod nəticə olaraq `Hello World` verir.
+- `end` parametri, print() funksiyasının parametrləri arasında verilənlərin sonuna nə işləmək istədiyimizi göstərmək üçün istifadə olunur. Məsələn: `print("Hello", "World", end="!")` Bu kod nəticə olaraq `Hello World!` verir.
+- `file` parametri, print() funksiyasının parametrləri arasında verilənləri fayla yazmaq üçün istifadə olunur. Məsələn: `print("Hello", "World", file=open("output.txt", "w"))` Bu kod nəticə olaraq `output.txt` faylında `Hello World` verir.
+- `flush` parametri, print() funksiyasının parametrləri arasında verilənləri tamamilə yazmaq üçün istifadə olunur. Məsələn: `print("Hello", "World", flush=True)` Bu kod nəticə olaraq `Hello World` verir.
+- `var` parametri, print() funksiyasının parametrləri arasında verilənləri istənilən sayda qədər çapa vermək üçün istifadə olunur. Məsələn: `print("Hello", "World", var="!")` Bu kod nəticə olaraq `Hello World!` verir.
 
 
 
