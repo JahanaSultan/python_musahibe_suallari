@@ -24,7 +24,7 @@ Bu repozitoriyada Python ilə bağlı müsahibə sual-cavabları toplanılır. S
 16. [Python-da funksiyalar nədir?](#python-da-funksiyalar-nədir)
 17. [Python-da __init__ nədir?](#python-da-__init__-nədir)
 18. [Python-da yayğın olaraq istifadə olunan built-in data types nələrdir?](#python-da-yayğın-olaraq-istifadə-olunan-built-in-data-types-nələrdir)
-<!-- 19. [Python-da lokal dəyişənlər və global dəyişənlər nələrdir?](#python-da-lokal-dəyişənlər-və-global-dəyişənlər-nələrdir) -->
+19. [Python-da shallow copy ilə deep copy arasındakı fərq nədir?](#python-da-shallow-copy-ilə-deep-copy-arasındakı-fərq-nədir)
 20. [Python-da type conversion nədir?](#python-da-type-conversion-nədir)
 21. [Windows üzərində Pythonun quraşdırılması və sistem yolu dəyişənin təyini necə edilir?](#windows-üzərində-pythonun-quraşdırılması-və-sistem-yolu-dəyişənin-təyini-necə-edilir)
 22. [Python'da array-lər və list-lər arasındakı fərq nədir?](#python-da-array-lər-və-list-lər-arasındakı-fərq-nədir)
@@ -289,6 +289,45 @@ Python-də bir sıra built-in verilən tipləri mövcuddur. Bəzi əsas built-in
 8. Set: Birləşik verilənləri toplamaq üçün istifadə olunan verilən tipidir. Təkrarlanan dəyərlərə imkan vermir və sırasızdır. Misal üçün: `fruits = {"apple", "banana", "orange"}`
 
 Bu yalnız bir neçə builtin verilən tipidir və Python-da daha çox verilən tipi mövcuddur. Hər bir verilən tipi özünəməxsus xüsusiyyətlərə və əməliyyatlara malikdir və proqramçıya çeşit
+
+# Python-da shallow copy ilə deep copy arasındakı fərq nədir?
+Python'da, "shallow copy" və "deep copy" olaraq adlandırılan iki fərqli kopyalama metodundan istifadə edə bilərsiniz.
+
+Shallow copy, orijinal obyektin referansını kopyalayır. Başqa bir deyişlə, yeni yaradılan obyekt, orijinal obyektin eyni yaddaş ünvanını göstərir. Shallow copy vasitəsilə kopyalanan obyekt, orijinal obyekt ilə eyni verilənlərə sahib olur, amma içərisindəki verilənlər dəyişdirilə bilən elementlərdən ibarətdirsə, dəyişikliklər iki obyekt arasında paylaşılır.
+
+Deep copy isə orijinal obyektin içindəkiləri tamamilə yeni bir yaddaş ünvanına sahib yeni bir obyekt yaradır. Bu metodla kopyalanan obyekt, orijinal obyektin verilərini tam olaraq özündə saxlayır və dəyişikliklər orijinal obyekt ilə kopya arasında paylaşılmaz. Yəni, deep copy vasitəsilə yeni bir obyekt yaradıldığı üçün, orijinal obyektin dəyişdirilməsi deep copy-ə təsir etməz.
+
+Bir obyektin shallow copys-ını yaratmaq üçün Python-dilində "copy" modulundan istifadə edə bilərsiniz, məsələn:
+
+```python
+import copy
+
+orijinal = [1, 2, [3, 4]]
+kopya = copy.copy(orijinal)
+
+orijinal[0] = 5
+orijinal[2][0] = 6
+
+print(orijinal)  # [5, 2, [6, 4]]
+print(kopya)  # [1, 2, [6, 4]]
+```
+
+Bir obyektin deep copysını yaratmaq üçün isə "copy" modulunun "deepcopy" funksiyasını istifadə edə bilərsiniz:
+
+```python
+import copy
+
+orijinal = [1, 2, [3, 4]]
+kopya = copy.deepcopy(orijinal)
+
+orijinal[0] = 5
+orijinal[2][0] = 6
+
+print(orijinal)  # [5, 2, [6, 4]]
+print(kopya)  # [1, 2, [3, 4]]
+```
+
+Bu nümunələrdə göründüyü kimi, shallow copyda daxilən veriləri dəyişdirmək, obyektin özünü də dəyişdirir, amma deep copyda daxilən veriləri dəyişdirmək, obyektin özünü dəyişdirmir.
 
 # Python-da type conversion nədir?
 Python-da tip çevirməsi (type conversion) bir verilən tipindən başqa bir verilən tipinə dəyişmək deməkdir. Python çox təhlükəsiz bir dildir və mümkün olduğu qədər avtomatik tip çevirmələrini etməyə çalışır. Ancaq zaman zaman proqramçının açıq şəkildə tip çevirməsinə ehtiyacı ola bilər.
