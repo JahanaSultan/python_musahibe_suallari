@@ -88,11 +88,11 @@ Bu repozitoriyada Python ilə bağlı müsahibə sual-cavabları toplanılır. S
 ### Advanced Python Müsahibə Sualları
 
 75. [Python-da lambda funksiyası nədir?](#python-da-lambda-funksiyası-nədir)
-<!-- 76. [Python-da self nədir?](#python-da-self-nədir) -->
+76. [Python-da multi-threading nədir?](#python-da-multi-threading-nədir)
 77. [append() və extend() metodları arasındakı fərq nədir?](#append-və-extend-metodları-arasındakı-fərq-nədir)
 78. [Python Flask verilənlər bazası sorğularını necə idarə edir?](#python-flask-verilənlər-bazası-sorğularını-necə-idarə-edir)
 79. [Python-da docstring nədir?](#python-da-docstring-nədir)
-80. [Python-da multi-threading necə əldə edilir?](#python-da-multi-threading-necə-əldə-edilir)
+80. [Python-da multi-threading-in məhdudiyyətləri nələrdir?](#python-da-multi-threading-in-məhdudiyyətləri-nələrdir)
 81. [Python-da slicing nədir?](#python-da-slicing-nədir)
 82. [Funksional proqramlaşdırma nədir? Python funksional proqramlaşdırma tərzinə əməl edirmi? Əgər belədirsə, Python-da funksional yönümlü proqramlaşdırmanı həyata keçirmək üçün bir neçə metodu sadalayın.](#funksional-proqramlaşdırma-nədir-python-funksional-proqramlaşdırma-tərzinə-əməl-edirmi-əgər-belədirsə-python-da-funksional-yönümlü-proqramlaşdırmanı-həyata-keçirmək-üçün-bir-neçə-metodu-sadalayın)
 83. [Python-da monkey patching nədir?](#python-da-monkey-patching-nədir)
@@ -349,7 +349,7 @@ Artıq Pythonun quraşdırılması və sistem yolu dəyişdirilməsi tamamlandı
 Python'da array-lər və list-lər arasındakı fərq əsasən onların yaddaş istifadəsi və elementlərinin tipi ilə bağlıdır. List-lər çox elastikdir və müxtəlif tipdə elementləri saxlaya bilərlər. Array-lər isə yalnız eyni tipdə elementləri saxlaya bilirlər və daha az yaddaş istifadə edirlər. List-ləri yaratmaq üçün sadəcə elementləri kvadrat mötərizələr içində yazmaq kifayətdir. Array-ləri yaratmaq üçün isə array modulundan (array.array ()) və ya NumPy paketindən (numpy.array ()) xüsusi funksiyalardan istifadə etmək lazımdır. List-lər daha çox istifadə olunur, çünki Python'da daxili olaraq mövcuddurlar. Array-lər isə böyük miqdarda eyni tipdə məlumat saxlamaq üçün daha effektivdir.
 
 # Python case sensitive-dir?
-Bəli, Python case sensitive-dir. Bu o deməkdir ki, kiçik və böyük hərfləri fərqli kimi qəbul edir. Məsələn, username və UserName eyni dəyişkən deyil və onları bir-birinin əvəzinə istifadə etmək səhv olar¹. Eyni qayda funksiya adları üçün də keçərlidir. Python'da case sensitive olmaq identifikatorların sayını artırır. Python'da case sensitive olan başqa bir nümunə isə açar sözlərdir. Açar sözlər Python'da xüsusi mənaya malik olan sözlərdir və onların istifadəsi məhdudlaşdırılıb. Açar sözləri dəyişkən və ya funksiya adı kimi istifadə etmək olmaz. Açar sözlərin hamısı kiçik hərflərlə yazılır (məs., if, for, while, and, or v.s.).
+Bəli, Python case sensitive-dir. Bu o deməkdir ki, kiçik və böyük hərfləri fərqli kimi qəbul edir. Məsələn, username və UserName eyni dəyişkən deyil və onları bir-birinin əvəzinə istifadə etmək səhv olar. Eyni qayda funksiya adları üçün də keçərlidir. Python'da case sensitive olmaq identifikatorların sayını artırır. Python'da case sensitive olan başqa bir nümunə isə açar sözlərdir. Açar sözlər Python'da xüsusi mənaya malik olan sözlərdir və onların istifadəsi məhdudlaşdırılıb. Açar sözləri dəyişkən və ya funksiya adı kimi istifadə etmək olmaz. Açar sözlərin hamısı kiçik hərflərlə yazılır (məs., if, for, while, and, or v.s.).
 
 # [::-1] nə iş görür?
 Python'da [::-1] bir sıra (sequence) üzərində tərsinmə əməliyyatıdır. Bu sıra bir simvol sırası (string), bir siyahı (list) və ya başqa bir sıra tipi ola bilər. Bu yazılışın mənası \"sondan başlayaraq, əvvələ doğru, hər addımda bir element geri say\"dır. Bu yazılışın üç hissəsi var: start, stop və step. Məsələn:
@@ -1050,3 +1050,96 @@ Python'da inkapsulyasiya üçün aşağıdakı mehanizmalar mövcuddur:
 3. **Property decorator**: Python'da `@property` decorator'u ilə bir dəyişənin məhdudiyyəti tətbiq edilə bilər. Bu decorator vasitəsilə dəyişəni metod kimi əldə etmək, dəyişmək və ya silmək üçün istifadə edə bilərik. Bu, dəyişənin daxilindəki işləmələrə nəzarət etməyə imkan verir və dəyişənin dəyərlərini tənzimləyir.
 
 Inkapsulyasiya, bir obyektin iç məlumatlarının gizlədilməsi və yalnız obyektin tərəfından müraciət edilməsi prinsipi ilə daha məhdudiyyətli və təhlükəsiz kodlar yazmağa imkan verir. Bu sayədə, məlumatlara təsadüfi dəyişikliklər edilməsi və kodun istifadəsi
+
+# Python-da lambda funksiyası nədir?
+Python-da lambda funksiyası adı olmayan funksiyadır. Yəni, funksiyaya ad verilmir. Biz artıq bilirik ki, Python-da normal funksiyaları təyin etmək üçün def açarı sözü istifadə olunur. Eynilə, Python-da anonim funksiyaları təyin etmək üçün lambda açarı sözü istifadə olunur. Lambda funksiyaları normal Python funksiyaları kimi davranır və argumentlər qəbul edir. Məsələn:
+
+```python
+# Normal funksiyası
+def add(x, y):
+    return x + y
+
+# Lambda funksiyası
+add = lambda x, y: x + y
+```
+
+Hər iki funksiya da eyni işi görür: iki ədədi toplayır və nəticəni qaytarır. Lakin lambda funksiyası daha qısa və daha sade yazılır.
+
+# Python-da multi-threading nədir?
+Python-da multi-threading bir prosesin eyni anda birdən çox iş parçasını (thread) icra etməsinə imkan verir. Multi-threading ilə proqramın icra müddəti azalır və müxtəlif vəzifələri eyni zamanda yerinə yetirir. Python-da multi-threading üçün threading modulundan istifadə edilir. Bu modul thread yaratmaq, başlatmaq, dayandırmaq və idarə etmək üçün funksiyalar və siniflər təqdim edir. Məsələn:
+
+```python
+# threading modulunu idxal edirik
+import threading
+
+# thread funksiyasını təyin edirik
+def print_hello():
+    print("Hello world!")
+
+# thread obyektini yaradırıq
+t = threading.Thread(target=print_hello)
+
+# thread-i başladırıq
+t.start()
+
+# thread-in bitməsini gözləyirik
+t.join()
+```
+
+Bu kodda print_hello funksiyasını bir thread-də icra etmək üçün threading.Thread sinifindən bir obyekt yaradırıq. target parametri thread funksiyasını göstərir. start metodu thread-i başladır, join metodu isə əsas proqramın thread-in bitməsini gözləməsinə imkan verir.
+
+
+# append() və extend() metodları arasındakı fərq nədir?
+`append()` və `extend()` metodları, Python dilində list-lər üçün mövcud olan metodlardır. Bu metodlar list-ə dəyər əlavə etmək üçün istifadə olunur. `append()` metodu, list-ə bir element əlavə etmək üçün istifadə olunur. `extend()` metodu isə list-ə bir list əlavə etmək üçün istifadə olunur. Məsələn:
+
+```python
+my_list = [1, 2, 3, 4, 5]
+my_list.append(6)
+print(my_list)  # Output: [1, 2, 3, 4, 5, 6]
+
+my_list1 = [1, 2, 3, 4, 5]
+my_list1.extend([6, 7, 8])
+print(my_list1)  # Output: [1, 2, 3, 4, 5, 6, 7, 8]
+```
+# Python Flask verilənlər bazası sorğularını necə idarə edir?
+Flask, verilənlər bazası sorğularını idarə etmək üçün SQLAlchemy kitabxanasından istifadə edir. SQLAlchemy, Python dilində verilənlər bazası ilə işləmək üçün istifadə olunan ən populyar kitabxanalardan biridir. SQLAlchemy, verilənlər bazası sorğularını idarə etmək üçün ORM (Object Relational Mapper) tətbiq edir. ORM, verilənlər bazası ilə obyekt-əlaqəli proqramlaşdırma (Object-Relational Programming) üçün istifadə olunan bir proqramlaşdırma tərzidir. ORM vasitəsilə, verilənlər bazası ilə işləmək üçün SQL sorğuları yazmaq yerinə Python obyektləri ilə işləmək olur. 
+
+# Python-da docstring nədir?
+Python-da docstring, bir funksiya, metod və ya sinifin üstündəki stringdən ibarət olan bir stringdir. Docstring, funksiya, metod və ya sinifin təsviri kimi istifadə olunur. Docstring, funksiya, metod və ya sinifin üstündəki stringdən ibarət olan bir stringdir. Docstring, funksiya, metod və ya sinifin təsviri kimi istifadə olunur. 
+
+# Python-da multi-threading-in məhdudiyyətləri nələrdir?
+Python-da multi-threading-in ən böyük məhdudiyyəti Python Global İnterpreter Kilidi (GIL) adlanan bir mekanizmadır. GIL, Python tərcüməçisinin eyni anda yalnız bir thread-i icra etməsinə imkan verir. Bu o deməkdir ki, multi-threading ilə CPU-yüklü işləri paralel icra etmək mümkün deyil. GIL-dən qaçmaq üçün multiprocessing modulundan istifadə etmək lazımdır.
+
+Python-da multi-threading-in başqa məhdudiyyətləri də var. Məsələn:
+
+- Thread-lər arasında məlumat paylaşmaq və ya əlaqə qurmaq üçün xüsusi sinxronizasiya mexanizmlərinin istifadəsi lazımdır.
+- Thread-lər arasında xüsusi resurslara müraciət etmək üçün lock-lardan istifadə etmək lazımdır.
+- Thread-lər arasında argument ötürmək üçün queue və ya pipe kimi abstraksiyalardan istifadə etmək lazımdır.
+- Thread-lər arasında xəta yoxlamaq üçün threading.excepthook funksiyasından istifadə etmək lazımdır.
+
+# Python-da slicing nədir?
+Python-da slicing, bir ardıcıllığın (list, tuple, string və s.) bir hissəsini seçmək üçün istifadə olunan bir əməldir. Slicing, ardıcıllığın indekslərini göstərərək ardıcıllığın bir hissəsini seçmək üçün istifadə olunur. Məsələn:
+
+```python
+my_list = [1, 2, 3, 4, 5]
+print(my_list[1:3])  # Output: [2, 3]
+```
+
+# Funksional proqramlaşdırma nədir? Python funksional proqramlaşdırma tərzinə əməl edirmi? Əgər belədirsə, Python-da funksional yönümlü proqramlaşdırmanı həyata keçirmək üçün bir neçə metodu sadalayın.
+Funksional proqramlaşdırma bir proqramlaşdırma paradiqmasıdır ki, onda proqramlar riyazi funksiyalar kimi təsvir olunur. Funksional proqramlaşdırma paradiqmasında dəyişənlər yoxdur, yalnız sabit dəyərlər və funksiyalar var. Funksional proqramlaşdırma paradiqmasının faydaları arasında kodun oxunaqlığı, test edilməsi, paralel işləməsi və yenidən istifadəsi sayıla bilər.
+
+Python funksional proqramlaşdırma tərzinə əməl edir, yəni onda funksional proqramlaşdırmanın bəzi xüsusiyyətləri mövcuddur. Lakin Python tamamilə funksional deyil, çünki onda dəyişənlər, obyekt-yönümlülük və digər paradiqmalar da var. Python-da funksional yönümlü proqramlaşdırmanı həyata keçirmək üçün bir neçə metodu sadalaya bilərik:
+
+- Lambda funksiyaları: adı olmayan və ya bir sıra ifadələrdən ibarət olan funksiyalardır³. Məsələn: `lambda x: x * 2` bir ədədi ikiyə vurur.
+- Map, filter və reduce funksiyaları: bunlar bir siyahıya və ya iterasiya oluna bilir obyektlere bir funksiyayı tətbiq edir və nəticini qaytarır. Məsələn: `map(lambda x: x * 2, [1, 2, 3])` siyahının hər elementini ikiyə vurur və yeni siyahı qaytarır.
+- List comprehension: bu bir sintaksis şirinliyidir ki, onunla siyahılara map və ya filter kimi Əmrlar verilir. Məs: `[x * 2 for x in [1, 2, 3]]` map funksiyasının eyni işini görür.
+- Generatorlar: bunlar iterator kimi davranan obyektlardır ki, onlar lazım olduqca dövrün növbәti elementini yaradır. Mәsәlәn: `(x * 2 for x in [1, 2, 3])` bir generator ifadәsidir ki, onun elementlәrini next() funksiyası ilә almaq olar.
+- Dekoratorlar: bunlar başqa bir funksiyanın üzәrinә geyinәn vә ya onu dәyişdirәn funksiyalardır. Mәsәlәn: `@staticmethod` dƏkoratoru bir metodun statik olmasını tәmin edir.
+
+# Python-da monkey patching nədir?
+Monkey patching Python-da bir sinifin və ya modulun atributlarını icra zamanı dəyişmək deməkdir. Monkey patching ilə proqramın nəzərdə tutulan davranışını dəyişdirib, yeni xüsusiyyətlər əlavə etmək və ya mövcud xüsusiyyətləri təkmilləşdirmək mümkündür. Monkey patching bəzən testlər, debug və ya üçüncü tərəf kitabxanaları ilə işləmək üçün faydalı ola bilir. Lakin monkey patching həmçinin riskli və problemli ola bilir, çünki onunla proqramın oxunaqlığı azalır, kodun sürdürülməsi çətinləşir və istenilmeyen yan təsirlər yarana bilir. Məsələn: 
+```python
+import bar 
+bar.do_something_expensive = lambda: 'Something really cheap.'
+``` 
+Bu kodda bar modulundan do_something_expensive funksiyasını monkey patch edirik vә onu ucuz bir әmәliyyatla әvәz edirik.
