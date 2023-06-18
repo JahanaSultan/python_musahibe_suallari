@@ -165,7 +165,7 @@ Python, çox tərəfli bir dildir. Pythonun istifadə sahələri:
 - Listlər, tuple-lardan daha çox yaddaş istifadə edir.
 - Listlər, tuple-lardan daha yavaş işləyir.
 - Listlər, tuple-lardan daha çox funksiyaya malikdir.
-- Siyahıların gözlənilməz dəyişikliklərlə üzləşmə ehtimalı daha yüksəkdir, bu da onları səhvlər baxımından daha az etibarlı edir. Tuples gözlənilməz dəyişikliklərə qarşı müqaviməti sayəsində artan etibarlılıq təklif edir.
+- Listlərin gözlənilməz dəyişikliklərlə üzləşmə ehtimalı daha yüksəkdir, bu da onları səhvlər baxımından daha az etibarlı edir. Tuples gözlənilməz dəyişikliklərə qarşı müqaviməti sayəsində artan etibarlılıq təklif edir.
 
 # pep8 nədir?
 Python-da PEP, Python Enhancement Proposal deməkdir. O, maksimum aydınlıq və oxunaqlılığı təmin etmək üçün Python kodunun hazırlanması və strukturlaşdırılması üçün optimal yanaşmanı əks etdirən təlimatlar toplusundan ibarətdir.
