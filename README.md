@@ -40,6 +40,7 @@ Bu repozitoriyada Python ilə bağlı müsahibə sual-cavabları toplanılır. S
 32. [Mənfi indekslər nədir və nə üçün istifadə olunurlar?](#mənfi-indekslər-nədir-və-nə-üçün-istifadə-olunurlar)
 33. [Bir sətirdəki bütün simvolların alfanumeric olduğunu necə yoxlamaq olar?](#bir-sətirdəki-bütün-simvolların-alfanumeric-olduğunu-necə-yoxlamaq-olar)
 34. [List-lərdə Del və Remove() arasındakı fərq nədir?](#list-lərdə-del-və-remove-arasındakı-fərq-nədir)
+35. [Python-da split() və splitlines() arasındakı fərq nədir?](#python-da-split-və-splitlines-arasındakı-fərq-nədir)
 
 ### Intermediate Python Müsahibə Sualları
 
@@ -527,22 +528,24 @@ bool(re.match(‘[A-Za-z0-9]+$','abcd123’))
 ```
 
 # List-lərdə Del və Remove() arasındakı fərq nədir?
-Python'da, listlərdə "del" operatoru və "remove()" funksiyası arasında fərqlər var.
+Python'da, listlərdə `del` operatoru və `remove()` funksiyası arasında fərqlər var.
 
-"del" operatoru, listdəki bir elementi indeksinə əsasən silmək üçün istifadə olunur. Bu operator, bir elementin indeksini verərək listdən o elementi silir. Daha sonra, listdəki digər elementlərin indeksləri yenidən qurulur. "del" operatorunun sintaksisi aşağıdakı kimi görünür:
+`del` operatoru, listdəki bir elementi indeksinə əsasən silmək üçün istifadə olunur. Bu operator, bir elementin indeksini verərək listdən o elementi silir. Daha sonra, listdəki digər elementlərin indeksləri yenidən qurulur. `del` operatorunun sintaksisi aşağıdakı kimi görünür:
 ```python
 del liste[indeks]
 ```
-"remove()" funksiyası isə listdəki bir elementi dəyərə görə silmək üçün istifadə olunur. Bu funksiya, silmək istədiyiniz elementin dəyərini verərək onu listdən tapır və silir. "remove()" funksiyasının sintaksisi aşağıdakı kimi görünür:
+`remove()` funksiyası isə listdəki bir elementi dəyərə görə silmək üçün istifadə olunur. Bu funksiya, silmək istədiyiniz elementin dəyərini verərək onu listdən tapır və silir. `remove()` funksiyasının sintaksisi aşağıdakı kimi görünür:
 ```python
 liste.remove(dəyər)
 ```
 Fərqlər:
 
-- "del" operatoru indeksə əsaslanır və indeksi verilən elementi silir, "remove()" funksiyası isə dəyərə əsaslanır və dəyəri verilən elementi silir.
-- "del" operatoru bir elementi silmək üçün indeksi tələb edir, "remove()" funksiyası isə bir elementi silmək üçün dəyəri tələb edir.
+- `del` operatoru bir elementi silmək üçün indeksi tələb edir, `remove()` funksiyası isə bir elementi silmək üçün dəyəri tələb edir.
+- `del` verilmiş aralıqda olan bütün elementləri silmək üçün istifadə oluna bilər, `remove()` isə yalnız bir elementi silmək üçün istifadə oluna bilər.
+- `remove()` funksiyası, silmək istədiyiniz elementi tapa bilməzsə, ValueError verir, `del` operatoru isə indeksi verilən elementi tapa bilmazsa IndexError verir.
+- `remove()` verilmiş dəyərə uyğun ilk tapdığı elementi silir.
 
-Nümunə olaraq, aşağıdakı kod hissəsində "del" operatoru və "remove()" funksiyası necə istifadə olunur:
+Nümunə olaraq, aşağıdakı kod hissəsində `del` operatoru və `remove()` funksiyası necə istifadə olunur:
 ```python
 liste = [1, 2, 3, 4, 5]
 
@@ -554,6 +557,43 @@ liste.remove(4)  # Dəyərə əsasən silmək
 
 print(liste)  # [1, 2, 5]
 ```
+
+# Python-da split() və splitlines() arasındakı fərq nədir?
+Python'da, `split()` və `splitlines()` string obyektləri üzərində fərqli nəticələr verən iki ayrı funksiya/dəyişən var.
+
+`split()` funksiyası, bir stringi boşluq (və ya digər ayırıcı simvollar) əsasında bölmək üçün istifadə olunur. Bu funksiya, verilən bir stringi ayırıcı simvollərə görə ayrışdıraraq bir listə çevirir. Ayırıcı simvollar təyin edilməzə qədər stringi boşluqlarla bölməyə çalışır. `split()` funksiyasının standart ayırıcı simvolu boşluqdur. 
+
+Nümunə olaraq:
+
+```python
+string = "Python proqramlaşdırma dili"
+result = string.split()
+print(result)
+```
+
+Bu kod hissəsində, `split()` funksiyası boşluqları ayırıcı simvol kimi istifadə edərək stringi bölməyə çalışır və stringin sözlərini tərkib edən bir listə çevirir. Nəticə kimi, aşağıdakı listi alacaqsınız:
+
+```
+['Python', 'proqramlaşdırma', 'dili']
+```
+
+`splitlines()` funksiyası isə bir stringi sətirlərə görə bölmək üçün istifadə olunur. Bu funksiya, bir stringi sətirlərə ayıraraq bir listə çevirir. `splitlines()` funksiyası, yeni sətirlər (`\n`, `\r`, `\r\n`) əsasında stringi bölməyə çalışır.
+
+Nümunə olaraq:
+
+```python
+string = "Sətir 1\nSətir 2\r\nSətir 3\rSətir 4"
+result = string.splitlines()
+print(result)
+```
+
+Bu kod hissəsində, `splitlines()` funksiyası stringi yeni sətirlərə əsasən bölməyə çalışır və stringin hər bir sətrini ehtiva edən bir listə çevirir. Nəticə kimi, aşağıdakı listi alacaqsınız:
+
+```
+['Sətir 1', 'Sətir 2', 'Sətir 3', 'Sətir 4']
+```
+
+Birinci nümunədə `split()` funksiyası boşluqları ayırıcı simvol kimi istifadə edərək stringi bölməyə çalışır və ikinci nümunədə `splitlines()` funksiyası yeni sətirləri ayırıcı simvol kimi istifadə edir. Bu səbəbdən, `split()` və `splitlines()` funksiyaları fərqli nəticələr verir.
 
 # Python-dakı "re" modulunun split(), sub() və subn() metodlarını açıqlayın.
 "re" modulu, Python-dakı regular ifadələr (`regex`) ilə işləmək üçün istifadə olunan bir moduldur. Bu modul, mətnlərin axtarışını, əvəzləməsini və başqa əməliyyatları icra etmək üçün funksiyalar və metodlar təklif edir. İstifadəçilərə geniş imkanlar verir və mətn işləmə prosesini daha effektiv edir.
