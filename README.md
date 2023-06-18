@@ -1332,5 +1332,29 @@ fibonacci(5)
 # 3
 ```
 
+# Ədədin sadə olub olmadığını yoxlamaq üçün Python-da proqram yazın
+```python
+
+def prime_number(n):
+    return all(n % i != 0 for i in range(2, n))
+
+print(prime_number(9))  # Output: False
+print(prime_number(11))  # Output: True
+```
+```python
+def prime_number(n):
+    if n < 2:
+        return False
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+
+print(prime_number(9))  # Output: False
+print(prime_number(11))  # Output: True
+```
+
+    
+
 
 
