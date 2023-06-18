@@ -1169,7 +1169,7 @@ Pandas, Python dilində verilənlər analizində və verilənlərə əməl etmə
 DataFrame, bir cədvəl formasında təşkil olunmuş məlumatlara əsaslanan iki ölçülü bir veri strukturudur. Bu, sətirlər və sütunlar şəklində məlumatları saxlamaq üçün çox rahatdır. DataFrame, SQL tablosuna bənzəyən bir formatdır və verilənlərinizi filtrə etmək, dəyişdirmək, analiz etmək və başqa bir çox əməliyyatlar üçün işlətməyə imkan verir.
 
 # Dataframe-də itkən dəyərləri necə aşkar etmək və onlarla necə başa çıxmaq olar?
-Dataframe-də itkən dəyərləri aşkar etmək üçün isnull() və ya isna() metodlarından istifadə edə bilərik. Bu metodlar DataFrame-dəki hər bir dəyərin itkən olub olmadığını yoxlayır və True və ya False qiymətləri qaytarır. True qiyməti itkən dəyəri göstərir. Məsələn:
+Dataframe-də itkən dəyərləri aşkar etmək üçün `isnull()` və ya `isna()` metodlarından istifadə edə bilərik. Bu metodlar DataFrame-dəki hər bir dəyərin itkən olub olmadığını yoxlayır və `True` və ya `False` qiymətləri qaytarır. `True` qiyməti itkən dəyəri göstərir. Məsələn:
 
 ```python
 import pandas as pd
@@ -1213,4 +1213,100 @@ print(df.isna())
 # g   True   True   True
 # h  False  False  False
 ``` 
+
+# Regresiya nədir?
+Pythonda regresiya statistikada regresiya analizinin tətbiqi deməkdir. Pythonda regresiya analizi üçün müxtəlif kitabxanalar və alətlər mövcuddur. Məs: `scikit-learn`, `statsmodels`, `pandas` və s. Pythonda regresiya analizi ilə bir və ya bir neçə asılı olmayan dəyişənin digər asılı dəyişənə təsirini ölçmək, münasibət və ya bağlılıq təyin etmək, nümunələndirmək və ya proqnozlaşdırmaq mümkündür. Pythonda regresiya analizinin növləri arasında sadə və ya cüt regresiya, çoxlu regresiya, loqit regresiya, polinomial regresiya və s. sayıla bilir.
+
+# Classification nədir?
+Pythonda classification maşın öyrənməsinin bir növüdür ki, onda verilənləri müəyyən kateqoriyalara və ya siniflərə ayırmaq mümkündür. Pythonda classification üçün müxtəlif alqoritmlar və kitabxanalar mövcuddur. Məsələn: `scikit-learn`, `tensorflow`, `keras` və s. Pythonda classification ilə verilənləri nümunələndirmək, təsnifat etmək, proqnozlaşdırmaq və ya törətmək mümkündür. Pythonda classification alqoritmlarının növləri arasında Naive Bayes, Loqistika Regresiya, K-nearest neighbors (KNN), Support Vector Machine (SVM), Decision Tree, Random Forest və s. sayıla bilir.
+
+# SVN nədir?
+Pythonda SVN (Support Vector Machine) classification üçün istifadə olunan bir alqoritmdir. Pythonda SVN üçün müxtəlif kitabxanalar mövcuddur. Məsələn: `scikit-learn`, `tensorflow`, `keras` və s. Pythonda SVN ilə verilənləri nümunələndirmək, təsnifat etmək, proqnozlaşdırmaq və ya törətmək mümkündür.
+
+# Python istifadə edərkən faizləri hesablamaq üçün ən asan yol nədir?
+Pythonda faizləri hesablamaq üçün ən asan yol arifmetik operatorlardan istifadə etməkdir. Məsələn: `faiz = məbləğ * faiz dərəcəsi / 100` Bu formulla verilmiş məbləğin faizini hesablaya bilərik. Məs: `faiz = 1000 * 10 / 100` Bu kod nəticə olaraq `100` verir, yəni 1000 manatın 10 faizi 100 manatdır. Pythonda faizləri hesablamaq üçün başqa bir yol da `math` kitabxanasından istifadə etməkdir. Bu kitabxana riyazi funksiyaları və sabitlərini təqdim edir. Məs: `import math faiz = math.fmod(məblәğ, faiz dәrәcәsi)` Bu formulla verilmiş mәblәğin faizini hesablaya bilәrik. Mәsələn: `import math faiz = math.fmod(1000, 10)` Bu kod nәticә olaraq `0` verir, yәni 1000 manatın 10 faizi tam bölünür vә qalıq yoxdur.
+
+
+# İterativ metoddan istifadə etmədən verilmiş sətirin palindrom olub-olmadığını yoxlamaq üçün Python proqramı yazın?
+```python
+def is_palindrome(s):
+    return s == s[::-1]
+
+print(is_palindrome("madam"))  # Output: True
+print(is_palindrome("hello"))  # Output: False
+```
+
+# Siyahıdakı ədədlərin cəmini hesablamaq üçün Python proqramı yazın
+
+```python
+def sum(numbers):
+    total = 0
+    for x in numbers:
+        total += x
+    return total
+
+print(sum((8, 2, 3, 0, 7)))  # Output: 20
+```
+
+# Bubble çeşidləmə alqoritmini yerinə yetirmək üçün Python-da proqram yazın
+```python
+def bubble_sort(nums):
+    swapped = True
+    while swapped:
+        swapped = False
+        for i in range(len(nums) - 1):
+            if nums[i] > nums[i + 1]:
+                nums[i], nums[i + 1] = nums[i + 1], nums[i]
+                swapped = True
+
+random_list_of_nums = [5, 2, 1, 8, 4]
+bubble_sort(random_list_of_nums)
+print(random_list_of_nums)  # Output: [1, 2, 4, 5, 8]
+```
+
+# Ulduz üçbucağını yaratmaq üçün Python-da proqram yazın?
+```python
+n = 5
+for i in range(n):
+    print("*" * (i+1))
+
+# Output:
+# *
+# **
+# ***
+# ****
+# *****
+```
+```python
+n = 5
+for i in range(n):
+    print(" " * (n-i-1), end="")
+    print("*" * (2*i+1), end="")
+    print(" " * (n-i-1))
+
+# Output:
+#     *
+#    ***
+#   *****
+#  *******
+# *********
+```
+```python
+n = 5
+for i in range(n):
+    print(" " * (n-i-1), end="")
+    print("*", end="")
+    if i > 0:
+        print(" " * (2*i-1), end="")
+        print("*", end="")
+    print(" " * (n-i-1))
+
+# Output:
+#     *
+#    * *
+#   *   *
+#  *     *
+# *********
+```
+
 
