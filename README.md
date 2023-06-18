@@ -516,6 +516,7 @@ print(s.isalnum())
 
 # output: True
 ```
+Bir başqa üsul isə `regex` modulundan istifadə etməkdir. Məsələn:
 ```python
 import re
 
