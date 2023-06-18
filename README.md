@@ -1137,9 +1137,80 @@ Python funksional proqramlaşdırma tərzinə əməl edir, yəni onda funksional
 - Dekoratorlar: bunlar başqa bir funksiyanın üzәrinә geyinәn vә ya onu dәyişdirәn funksiyalardır. Mәsәlәn: `@staticmethod` dƏkoratoru bir metodun statik olmasını tәmin edir.
 
 # Python-da monkey patching nədir?
-Monkey patching Python-da bir sinifin və ya modulun atributlarını icra zamanı dəyişmək deməkdir. Monkey patching ilə proqramın nəzərdə tutulan davranışını dəyişdirib, yeni xüsusiyyətlər əlavə etmək və ya mövcud xüsusiyyətləri təkmilləşdirmək mümkündür. Monkey patching bəzən testlər, debug və ya üçüncü tərəf kitabxanaları ilə işləmək üçün faydalı ola bilir. Lakin monkey patching həmçinin riskli və problemli ola bilir, çünki onunla proqramın oxunaqlığı azalır, kodun sürdürülməsi çətinləşir və istenilmeyen yan təsirlər yarana bilir. Məsələn: 
+Monkey patching Python-da bir sinifin və ya modulun atributlarını icra zamanı dəyişmək deməkdir. Monkey patching ilə proqramın nəzərdə tutulan davranışını dəyişdirib, yeni xüsusiyyətlər əlavə etmək və ya mövcud xüsusiyyətləri təkmilləşdirmək mümkündür. Monkey patching bəzən testlər, debug və ya üçüncü tərəf kitabxanaları ilə işləmək üçün faydalı ola bilir. Lakin monkey patching həmçinin riskli və problemli ola bilir, çünki onunla proqramın oxunaqlığı azalır, kodun sürdürülməsi çətinləşir və istənilməyən yan təsirlər yarana bilir. Məsələn: 
 ```python
 import bar 
 bar.do_something_expensive = lambda: 'Something really cheap.'
 ``` 
 Bu kodda bar modulundan do_something_expensive funksiyasını monkey patch edirik vә onu ucuz bir әmәliyyatla әvәz edirik.
+
+# Python-da / və // operatoru arasındakı fərq nədir?
+Python-da / operatoru ardıcıllıqların (list, tuple, string və s.) elementlərini bölür və nəticəni float tipində qaytarır. // operatoru isə ardıcıllıqların elementlərini bölür və nəticəni integer tipində qaytarır. Məsələn:
+
+```python
+print(10 / 3)  # Output: 3.3333333333333335
+print(10 // 3)  # Output: 3
+```
+
+# Pandas nədir?
+Pandas, Python programlama dilində yayımlanan açık mənbəli bir verilənlər analiz kitabxanasıdır. "Pandas" adı, "panel datası" kimi ifadə edilən verilənlərin manipulyasiyasını və analizini kolaylaşdırmağa kömək edir.
+
+Pandas, verilənlər ilə işləmək və onları manipulyasiya etmək üçün güclü və sadə bir alətdir. İki əsas veri strukturu üzərində işləyir: DataFrame və Series.
+
+- DataFrame: DataFrame, bir cədvəl formasında təşkil olunmuş məlumatlara əsaslanan iki ölçülü bir veri strukturudur. Bu, sətirlər və sütunlar şəklində məlumatları saxlamaq üçün çox rahatdır. DataFrame, SQL tablosuna bənzəyən bir formatdır və verilənlərinizi filtrə etmək, dəyişdirmək, analiz etmək və başqa bir çox əməliyyatlar üçün işlətməyə imkan verir.
+
+- Series: Series, yalnız sütunlardan ibarət bir veri strukturudur. Bir sütundakı veriləri təmsil edir və indekslənmiş olur. Series, bir verilənləri sıralamaq, filtrləmək, həmçinin istədiyiniz bir çox veri işləmlərini yerinə yetirmək üçün istifadə olunur.
+
+Pandas, verilənlərə, boşluqlara, eksik verilənlərə, CSV, Excel, SQL və digər fayl formatlarına çox rahat şəkildə yükləmə və saxlama imkanı verir. Həmçinin, verilənləri filtrə etmək, dəyişdirmək, sıralamaq, qruplaşdırmaq, statistik analizlər aparmaq, görsəlləşdirmək və digər çox sayda verilənlər işləmə əməliyyatlarını gerçəkləşdirmək üçün də daxilində bir çox funksiyalar və metodlar mövcuddur.
+
+Pandas, Python dilində verilənlər analizində və verilənlərə əməl etməkdə populyar və yaygın şəkildə istifadə olunan bir kitabxanadır.
+
+# Dataframes nədir?
+DataFrame, bir cədvəl formasında təşkil olunmuş məlumatlara əsaslanan iki ölçülü bir veri strukturudur. Bu, sətirlər və sütunlar şəklində məlumatları saxlamaq üçün çox rahatdır. DataFrame, SQL tablosuna bənzəyən bir formatdır və verilənlərinizi filtrə etmək, dəyişdirmək, analiz etmək və başqa bir çox əməliyyatlar üçün işlətməyə imkan verir.
+
+# Dataframe-də itkən dəyərləri necə aşkar etmək və onlarla necə başa çıxmaq olar?
+Dataframe-də itkən dəyərləri aşkar etmək üçün isnull() və ya isna() metodlarından istifadə edə bilərik. Bu metodlar DataFrame-dəki hər bir dəyərin itkən olub olmadığını yoxlayır və True və ya False qiymətləri qaytarır. True qiyməti itkən dəyəri göstərir. Məsələn:
+
+```python
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.random.randn(5, 3), index=['a', 'c', 'e', 'f', 'h'], columns=['one', 'two', 'three'])
+df = df.reindex(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'])
+print(df)
+# Output:
+#         one       two     three
+# a -0.204708  0.478943 -0.519439
+# b       NaN       NaN       NaN
+# c -0.555730  1.965781  1.393406
+# d       NaN       NaN       NaN
+# e  0.092908  0.281746  0.769023
+# f  1.246435  1.007189 -1.296221
+# g       NaN       NaN       NaN
+# h  0.274992  0.228913  1.352917
+
+print(df.isnull())
+# Output:
+#      one    two  three
+# a  False  False  False
+# b   True   True   True
+# c  False  False  False
+# d   True   True   True
+# e  False  False  False
+# f  False  False  False
+# g   True   True   True
+# h  False  False  False
+
+print(df.isna())
+# Output:
+#      one    two  three
+# a  False  False  False
+# b   True   True   True
+# c  False  False  False
+# d   True   True   True
+# e  False  False  False
+# f  False  False  False
+# g   True   True   True
+# h  False  False  False
+``` 
+
