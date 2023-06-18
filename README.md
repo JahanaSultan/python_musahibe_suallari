@@ -38,7 +38,7 @@ Bu repozitoriyada Python ilə bağlı müsahibə sual-cavabları toplanılır. S
 30. [Python-da çox sətirli şəkildə necə şərh yazmaq olar?](#python-da-çox-sətirli-şəkildə-necə-şərh-yazmaq-olar)
 31. [Python dili nə cür bir dil sayılır - proqramlaşdırma dili və ya skript dilidir?](#python-dili-nə-cür-bir-dil-sayılır---proqramlaşdırma-dili-və-ya-skript-dilidir)
 32. [Mənfi indekslər nədir və nə üçün istifadə olunurlar?](#mənfi-indekslər-nədir-və-nə-üçün-istifadə-olunurlar)
-
+33. [Bir sətirdəki bütün simvolların alfanumeric olduğunu necə yoxlamaq olar?](#bir-sətirdəki-bütün-simvolların-alfanumeric-olduğunu-necə-yoxlamaq-olar)
 
 ### Intermediate Python Müsahibə Sualları
 
@@ -298,7 +298,6 @@ Shallow copy, orijinal obyektin referansını kopyalayır. Başqa bir deyişlə,
 Deep copy isə orijinal obyektin içindəkiləri tamamilə yeni bir yaddaş ünvanına sahib yeni bir obyekt yaradır. Bu metodla kopyalanan obyekt, orijinal obyektin verilərini tam olaraq özündə saxlayır və dəyişikliklər orijinal obyekt ilə kopya arasında paylaşılmaz. Yəni, deep copy vasitəsilə yeni bir obyekt yaradıldığı üçün, orijinal obyektin dəyişdirilməsi deep copy-ə təsir etməz.
 
 Bir obyektin shallow copys-ını yaratmaq üçün Python-dilində "copy" modulundan istifadə edə bilərsiniz, məsələn:
-
 ```python
 import copy
 
@@ -509,6 +508,22 @@ Mənfi indekslərin istifadəsi bir neçə məqsədə xidmət edir:
 
 Ən əsas faydası, mənfi indekslərin verilənlər strukturlarının son elementlərinə asanlıqla çatmağa imkan verərək, tərs istiqamətdə indekslənməni idarə edə bilməsi və dövriyyələr üçün rahatlıq yaratmasıdır.
 
+# Bir sətirdəki bütün simvolların alfanumeric olduğunu necə yoxlamaq olar?
+Python-dakı `isalnum()` metodu, bir sətirdəki bütün simvolların alfanumeric olduğunu yoxlamağa imkan verir. Bu metod, bir sətirin alfanumeric olub-olmadığını yoxlamaq üçün istifadə olunur. Məsələn:
+```python
+s = "HelloWorld123"
+print(s.isalnum())
+
+# output: True
+```
+```python
+import re
+
+bool(re.match(‘[A-Za-z0-9]+$','abcd123’))
+
+# output: True
+```
+
 # Python-dakı "re" modulunun split(), sub() və subn() metodlarını açıqlayın.
 "re" modulu, Python-dakı regular ifadələr (`regex`) ilə işləmək üçün istifadə olunan bir moduldur. Bu modul, mətnlərin axtarışını, əvəzləməsini və başqa əməliyyatları icra etmək üçün funksiyalar və metodlar təklif edir. İstifadəçilərə geniş imkanlar verir və mətn işləmə prosesini daha effektiv edir.
 
@@ -642,7 +657,7 @@ Python dilində çoxlu miras dəstəklənir. Çoxlu miras, bir sinifin birdən �
 - range daha çox yaddaş sərf edir, çünki bir siyahı yaradır. xrange isə daha az yaddaş sərf edir, çünki yalnız bir iterator obyekti yaradır.
 
 # "Pickling və unpickling" nə deməkdir?
-Pickling, Python obyektlərini bir fayla yazmaq üçün istifadə olunan bir prosesdir. Pickling, bir obyektin hər hansı bir fayla yazılması deməkdir. Fayl daha sonra oxunaraq obyektin bərpa edilməsi prosesi unpickling adlanır. Pickling və unpickling, Python obyektlərini fayllarda saxlamaq üçün istifadə olunan bir prosesdir.
+Pickling, python obyekt iyerarxiyasının bayt axınına çevrilməsinə deyilir. Bayt axınının Python obyekt iyerarxiyasına çevrilməsinə unpickling deyilir. Pickling və unpickling, Python obyektlərini fayllarda saxlamaq üçün istifadə olunan bir prosesdir.
 Nümunə olaraq, aşağıdakı kodda bir obyektin seriləşdirilməsi (pickling) göstərilir:
 ```python
 import pickle
