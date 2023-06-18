@@ -1309,4 +1309,28 @@ for i in range(n):
 # *********
 ```
 
+# Python-da Fibonacci seriyası yaratmaq üçün proqram yazın
+```python
+def fibonacci(n):
+    n1, n2 = 0, 1
+    count = 0
+
+    while count < n:
+        print(n1)
+        nth = n1 + n2
+        n1 = n2
+        n2 = nth
+        count += 1
+
+fibonacci(5)
+
+# Output:
+# 0
+# 1
+# 1
+# 2
+# 3
+```
+
+
 
