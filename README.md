@@ -39,6 +39,7 @@ Bu repozitoriyada Python ilə bağlı müsahibə sual-cavabları toplanılır. S
 31. [Python dili nə cür bir dil sayılır - proqramlaşdırma dili və ya skript dilidir?](#python-dili-nə-cür-bir-dil-sayılır---proqramlaşdırma-dili-və-ya-skript-dilidir)
 32. [Mənfi indekslər nədir və nə üçün istifadə olunurlar?](#mənfi-indekslər-nədir-və-nə-üçün-istifadə-olunurlar)
 33. [Bir sətirdəki bütün simvolların alfanumeric olduğunu necə yoxlamaq olar?](#bir-sətirdəki-bütün-simvolların-alfanumeric-olduğunu-necə-yoxlamaq-olar)
+34. [List-lərdə Del və Remove() arasındakı fərq nədir?](#list-lərdə-del-və-remove-arasındakı-fərq-nədir)
 
 ### Intermediate Python Müsahibə Sualları
 
@@ -523,6 +524,35 @@ import re
 bool(re.match(‘[A-Za-z0-9]+$','abcd123’))
 
 # output: True
+```
+
+# List-lərdə Del və Remove() arasındakı fərq nədir?
+Python'da, listlərdə "del" operatoru və "remove()" funksiyası arasında fərqlər var.
+
+"del" operatoru, listdəki bir elementi indeksinə əsasən silmək üçün istifadə olunur. Bu operator, bir elementin indeksini verərək listdən o elementi silir. Daha sonra, listdəki digər elementlərin indeksləri yenidən qurulur. "del" operatorunun sintaksisi aşağıdakı kimi görünür:
+```python
+del liste[indeks]
+```
+"remove()" funksiyası isə listdəki bir elementi dəyərə görə silmək üçün istifadə olunur. Bu funksiya, silmək istədiyiniz elementin dəyərini verərək onu listdən tapır və silir. "remove()" funksiyasının sintaksisi aşağıdakı kimi görünür:
+```python
+liste.remove(dəyər)
+```
+Fərqlər:
+
+- "del" operatoru indeksə əsaslanır və indeksi verilən elementi silir, "remove()" funksiyası isə dəyərə əsaslanır və dəyəri verilən elementi silir.
+- "del" operatoru bir elementi silmək üçün indeksi tələb edir, "remove()" funksiyası isə bir elementi silmək üçün dəyəri tələb edir.
+
+Nümunə olaraq, aşağıdakı kod hissəsində "del" operatoru və "remove()" funksiyası necə istifadə olunur:
+```python
+liste = [1, 2, 3, 4, 5]
+
+del liste[2]  # Indeksə əsasən silmək
+
+print(liste)  # [1, 2, 4, 5]
+
+liste.remove(4)  # Dəyərə əsasən silmək
+
+print(liste)  # [1, 2, 5]
 ```
 
 # Python-dakı "re" modulunun split(), sub() və subn() metodlarını açıqlayın.
